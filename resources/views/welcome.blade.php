@@ -4,42 +4,34 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Tailwind CSS -->
-    <title>Cashout</title>
+    <title>codeHacks™️</title>
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
-    <meta property="og:title" content="Cashout Kenya">
+    <meta property="og:title" content="codeHacks™️">
     <meta property="og:description" content="
-        Cashout Kenya is a community of people who are tired of online scams and are looking for a legit way to make money online.
-        ">
-    <meta property="og:image" content="{{asset('images/Cash Type Blend.png')}}">
-    <meta property="og:url" content="https://cashout.co.ke/">
+    CodeHacks is a community of developers and tech enthusiasts learning to code, improving their skills, and building software projects.
+    ">
+    <meta property="og:image" content="{{asset('images/codeHacks-logo.png')}}">
+    <meta property="og:url" content="https://codehacks.co.ke/">
 
-    <meta name="twitter:card" content="{{asset('images/Cash Type Blend.png')}}">
-    <meta name="twitter:site" content="@cashoutkenya">
-    <meta name="twitter:title" content="Cashout Kenya">
+    <meta name="twitter:card" content="{{asset('images/codeHacks-logo.png')}}">
+    <meta name="twitter:site" content="@codehackske">
+    <meta name="twitter:title" content="codeHacks™️">
     <meta name="twitter:description" content="
-        Cashout Kenya is a community of people who are tired of online scams and are looking for a legit way to make money online."/>
-    <meta name="twitter:image" content="{{asset('storage/images/code.png')}}">
-
-
+    CodeHacks is a community of developers and tech enthusiasts learning to code, improving their skills, and building software projects."/>
+    <meta name="twitter:image" content="{{asset('storage/images/codeHacks-logo.png')}}">
 
     <link rel="icon" href="{{ asset('storage/images/fav.png') }}" type="image/png" sizes="16x16">
     <meta aria-description="
-        Cashout Kenya is a community of people who are tired of online scams and are looking for a legit way to make money online.
-CAUTION: This is not a get rich quick scheme. You will have to work hard to make money. However, we will provide you with the tools and resources you need to succeed.">
+    CodeHacks is a community of developers and tech enthusiasts learning to code, improving their skills, and building software projects.
+    ">
 
     <!--details for search engines-->
-    <meta name="description" content="Cashout Kenya is a community of people who are tired of online scams and are looking for a legit way to make money online.
-CAUTION: This is not a get rich quick scheme. You will have to work hard to make money. However, we will provide you with the tools and resources you need to succeed.">
+    <meta name="description" content="CodeHacks is a community of developers and tech enthusiasts learning to code, improving their skills, and building software projects.">
 
-    <meta name="keywords" content="cashout kenya, cashoutkenya, cashout, kenya, cash, cashout.com,
-        cashoutkenya.com, cashoutkenya.co.ke, cashoutkenya.co.ke, cashoutkenya.co.ke, cashoutkenya.co.ke,
-        pesa, withdraw, money, make money, make money online, make money online in kenya, make money online in kenya,
-        make money online in kenya, make money online in kenya, make money online in kenya, make money online in kenya,
-        free, free money, free money online, free money online in kenya, free money online in kenya,
-        earn, earn money, earn money online, earn money online in kenya, earn money online in kenya,
-        easy, easy money, easy money online, easy money online in kenya, easy money online in kenya," />
+    <meta name="keywords" content="codeHacks, codehacks kenya, coding, learn coding, learn to code, programming, web development, web design, software development, Laravel, freelance, freelancing, tech community, coding community, programming community, Kenya, technology, JavaScript, Java, PHP, C++, C#, Python, Adobe, VS Code, UI, backend, SSH, VPS, Linux servers, Apache, Windows installation, codehacks.co.ke" />
+
     <script src="https://kit.fontawesome.com/af6aba113a.js" crossorigin="anonymous"></script>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -47,9 +39,6 @@ CAUTION: This is not a get rich quick scheme. You will have to work hard to make
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-    <!-- add assets -->
-    {{--        <link rel="stylesheet" href="{{ secure_asset('/app.css') }}">
-            <script src="{{ secure_asset('/app.js') }}" defer></script>--}}
     <style>
         .swiper-slide {
             height: 80.7vh; /* 2/3 of viewport height */
@@ -58,6 +47,12 @@ CAUTION: This is not a get rich quick scheme. You will have to work hard to make
             height: 100%;
             width: 100%;
             object-fit: cover;
+        }
+
+        .swiper-slide {
+            background: url('{{ asset(' storage/images/codehacks.svg ') }}');
+            background-repeat: no-repeat;
+            background-size: cover;
         }
     </style>
 </head>
@@ -92,13 +87,17 @@ CAUTION: This is not a get rich quick scheme. You will have to work hard to make
 
 
 <div class="mx-auto max-w-7xl">
+
     <main class="">
         <!-- Swiper -->
         <div class="swiper-container relative">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
-                <div style="background: url('{{ asset('storage/images/codehacks.svg') }}')" class="swiper-slide bg-[url('C:/Apps/cashout/public/images/cashout.svg')] h-fit">
+                <div style="background: url('{{ asset('storage/images/codehacks.svg') }}');
+                background-repeat: no-repeat;
+                background-size: cover;
+                " class="swiper-slide bg-[url('C:/Apps/cashout/public/images/cashout.svg')] h-fit">
                     {{--<img height="screen" src="/images/dark2.jpg" class="w-full min-h-64 object-cover" alt="image description">--}}
                     <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
                         <h1 class="text-2xl font-semibold text-white">Welcome to CodeHacks™️</h1>
