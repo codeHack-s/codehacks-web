@@ -2,6 +2,11 @@
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
+        <!-- Welcome -->
+        <div class="flex items-center my-4 sm:my-6 md:my-8 justify-center">
+            <h1 class="sm:text-3xl text-2xl font-bold text-gray-900">Welcome to {{ config('app.name', 'Laravel') }}</h1>
+        </div>
+
         <section class="names flex w-full gap-2 items-center justify-center">
             <!-- First Name -->
             <div>
@@ -53,14 +58,23 @@
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
         </div>
 
+        <!-- Terms of Service -->
+        <div class="mt-4 flex gap-2">
+            <p class="text-xs italic text-gray-400" for="terms_of_service">Accept Terms of Service and cookie policy</p>
+            <input type="checkbox" id="terms_of_service" class="block mx-2" name="terms_of_service" required />
+        </div>
+
         <div class="flex items-center justify-end mt-4">
             <a class="underline text-sm text-gray-600 hover:text-blue-500" href="{{ route('login') }}">
                 {{ __('Already registered?') }}
             </a>
 
-            <x-primary-button class="ml-4">
-                {{ __('Register') }}
-            </x-primary-button>
+            <div class="tooltip tooltip-left" data-tip="By clicking Register, you agree to our Terms, Data Policy and Cookies Policy.">
+                <x-primary-button class="ml-4">
+                    {{ __('Register') }}
+                </x-primary-button>
+            </div>
+
         </div>
     </form>
 </x-guest-layout>
