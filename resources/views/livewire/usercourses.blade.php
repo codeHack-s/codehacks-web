@@ -21,19 +21,19 @@
             <thead>
             <tr>
                 <th>Title</th>
-                <th class="hidden md:block">Description</th>
+                <th>Description</th>
                 <th>Online</th>
-                <th class="hidden md:block">Image</th>
+                <th>Image</th>
                 <th>Actions</th>
             </tr>
             </thead>
 
             @foreach($courses as $course)
-                <tr class="items-center">
+                <tr>
                     <td>{{ $course->title }}</td>
-                    <td class="hidden md:block">{{ $course->description }}</td>
+                    <td>{{ $course->description }}</td>
                     <td>{{ $course->online ? 'Yes' : 'No' }}</td>
-                    <td class="hidden md:block"><img class="w-20 rounded-md " src="{{ $course->image_url }}" alt="{{ $course->title }}"></td>
+                    <td><img class="w-20 rounded-md " src="{{ $course->image_url }}" alt="{{ $course->title }}"></td>
                     <td>
                         <section class="flex gap-4">
 

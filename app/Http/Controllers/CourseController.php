@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -65,7 +66,7 @@ class CourseController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Course $course)
+    public function show(Course $course): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
     {
         return view('courses.show', compact('course'));
     }
@@ -132,8 +133,68 @@ class CourseController extends Controller
     /**
      * Enroll a user in a course
      */
-    public function enroll(Course $course)
+    public function enroll(Course $course, Request $request): \Illuminate\Http\RedirectResponse
     {
-        // Add logic to enroll a user in a course
+        // Validate the request
+        $request->validate([
+            'user_id' => 'required|exists:users,id',
+        ]);
+
+        // Get the user by the passed in ID
+        $user = User::find($request->user_id);
+
+        // Check if the user is already enrolled in the course
+        if ($user->courses()->where('course_id', $course->id)->exists()) {
+            return redirect()->route('courses.show', $course)->with('error', 'User is already enrolled in the course');
+        }
+
+        // Attach the course to the user and the timestamp
+        $user->courses()->attach($course->id, ['created_at' => now(), 'updated_at' => now()]);
+
+        // Redirect back to the course with a success message
+        return redirect()->route('courses.show', $course)->with('success', 'Successfully enrolled the user in the course');
     }
+
+    /**
+     * Unenroll a user from a course
+     */
+    public function unenroll(Course $course, Request $request): \Illuminate\Http\RedirectResponse
+    {
+        // Validate the request
+        $request->validate([
+            'user_id' => 'required|exists:users,id',
+        ]);
+
+        // Get the user by the passed in ID
+        $user = User::find($request->user_id);
+
+        // Check if the user is already enrolled in the course
+        if (!$user->courses()->where('course_id', $course->id)->exists()) {
+            return redirect()->route('courses.show', $course)->with('error', 'User is not enrolled in the course');
+        }
+
+        // Detach the course from the user
+        $user->courses()->detach($course->id);
+
+        // Redirect back to the course with a success message
+        return redirect()->route('courses.show', $course)->with('success', 'Successfully unenrolled the user from the course');
+    }
+
+
+    /**
+     * Display a listing of the enrolled users for a course.
+     */
+    public function students(Course $course): \Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
+    {
+        $students = $course->users()->get();
+        return view('courses.students', compact('course', 'students'));
+    }
+
+
+    public function userCourses(User $user): \Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
+    {
+        $courses = $user->courses()->get();
+        return view('courses.user', compact('user', 'courses'));
+    }
+
 }

@@ -24,6 +24,10 @@ Fields: id, course_id, title, description, venue(if physical), date, registered_
         'attending_members_count'
     ];
 
+    protected $casts = [
+        'date' => 'datetime',
+    ];
+
     public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(User::class);

@@ -25,6 +25,7 @@
                     <i class="fa-solid fa-plus"></i>
                 </x-round-button>
             </section>
+
         </form>
     </div>
 </x-app-layout>

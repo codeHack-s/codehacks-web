@@ -23,6 +23,7 @@
         @livewireScripts
 
     </head>
+
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
             @include('layouts.navigation')
@@ -37,9 +38,10 @@
             @endif
 
             <!-- Page Content -->
-            <main class="p-2 sm:p-4 ">
+            <main class="p-2 sm:p-4 overflow-clip">
                 {{ $slot }}
             </main>
+
         </div>
     </body>
 </html>

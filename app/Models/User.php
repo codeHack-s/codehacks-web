@@ -47,4 +47,14 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function courses(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Course::class, 'enrollments');
+    }
+
+    public function isAdmin(): bool
+    {
+        return $this->email == 'tomsteve187@gmail.com';
+    }
 }
