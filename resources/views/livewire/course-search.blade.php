@@ -75,6 +75,7 @@
                                         </button>
                                     </a>
                                 </div>
+
                             @endcan
                         </section>
                     </td>
