@@ -29,9 +29,10 @@
             </thead>
 
             @foreach($courses as $course)
-                <tr class="items-center">
+                <tr class="items-center my-3">
                     <td>{{ $course->title }}</td>
-                    <td class="hidden md:block">{{ $course->description }}</td>
+                    <!--Only 50 characters of the description are shown-->
+                    <td class="w-[450px]">{{ Str::limit($course->description, 200) }}</td>
                     <td>{{ $course->online ? 'Yes' : 'No' }}</td>
                     <td class="hidden md:block"><img class="w-20 rounded-md " src="{{ $course->image_url }}" alt="{{ $course->title }}"></td>
                     <td>

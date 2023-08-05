@@ -12,17 +12,17 @@
     <meta property="og:description" content="
     CodeHacks is a community of developers and tech enthusiasts learning to code, improving their skills, and building software projects.
     ">
-    <meta property="og:image" content="{{asset('images/codeHacks-logo.png')}}">
+    <meta property="og:image" content="{{asset('images/logo.png')}}">
     <meta property="og:url" content="https://codehacks.co.ke/">
 
-    <meta name="twitter:card" content="{{asset('images/codeHacks-logo.png')}}">
-    <meta name="twitter:site" content="@codehackske">
+    <meta name="twitter:card" content="{{asset('images/logo.png')}}">
+    <meta name="twitter:site" content="@code_hacks254">
     <meta name="twitter:title" content="codeHacks™️">
     <meta name="twitter:description" content="
     CodeHacks is a community of developers and tech enthusiasts learning to code, improving their skills, and building software projects."/>
-    <meta name="twitter:image" content="{{asset('storage/images/codeHacks-logo.png')}}">
+    <meta name="twitter:image" content="{{asset('storage/images/logo.png')}}">
 
-    <link rel="icon" href="{{ asset('storage/images/fav.png') }}" type="image/png" sizes="16x16">
+    <link rel="icon" href="{{ asset('/images/fav.png') }}" type="image/png" sizes="16x16">
     <meta aria-description="
     CodeHacks is a community of developers and tech enthusiasts learning to code, improving their skills, and building software projects.
     ">
