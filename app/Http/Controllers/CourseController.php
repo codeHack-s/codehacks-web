@@ -177,7 +177,7 @@ class CourseController extends Controller
         $user->courses()->detach($course->id);
 
         // Redirect back to the course with a success message
-        return redirect()->route('courses.show', $course)->with('success', 'Successfully unenrolled the user from the course');
+        return redirect()->route('courses.show', $course)->with('success', 'Successfully un-enrolled the user from the course');
     }
 
 

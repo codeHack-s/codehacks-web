@@ -40,6 +40,11 @@ Route::middleware(['auth','verified'])->group(function () {
     //define index route
     Route::get('courses', [CourseController::class, 'index'])->name('courses.index');
     Route::post('courses/{course}/enroll', [CourseController::class, 'enroll'])->name('courses.enroll');
+
+    Route::post('lessons/{lesson}/attend', [LessonController::class, 'attend'])->name('lesson.attend');
+    //un-attend
+    Route::post('lessons/{lesson}/unattend', [LessonController::class, 'unattend'])->name('lesson.unattend');
+
     Route::post('courses/{course}/unenroll', [CourseController::class, 'unenroll'])->name('courses.unenroll');
 
     Route::get('courses/{course}/students', [CourseController::class, 'students'])->name('courses.students');

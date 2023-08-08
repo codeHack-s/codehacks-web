@@ -8,6 +8,7 @@
                 <img class="rounded-lg md:w-56" src="{{ $course->image_url }}" alt="{{ $course->title }}">
             </div>
             <div class="mt-4 flex flex-col gap-2 md:mt-0">
+
                 <h2 class="text-2xl font-semibold text-gray-900">{{ $course->title }}</h2>
                 <p class="mt-2 text-gray-600">{{ $course->description }}</p>
                 @if (!Auth::user()->courses->contains($course->id))
@@ -31,8 +32,32 @@
                         </x-primary-button>
                     </form>
                 @endif
-
             </div>
         </div>
+        <div class="flex flex-wrap gap-3">
+            @if($course->lessons->count() > 0)
+
+                @foreach ($course->lessons as $lesson)
+                    <div class="flex flex-wrap gap-3 items-center justify-start">
+
+                        <div class="avatar">
+                            <div class="w-24 mask mask-hexagon">
+                                <img src="{{ $course->image_url }}" alt="{{ $course->title }}" />
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h2 class="text-2xl font-semibold text-gray-900">{{ $lesson->title }}</h2>
+                            <p class="mt-1 text-gray-600">{{ $lesson->description }}</p>
+                        </div>
+
+                    </div>
+                @endforeach
+
+            @else
+                No lessons yet!
+            @endif
+        </div>
+
     </section>
 </x-app-layout>

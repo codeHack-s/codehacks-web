@@ -13,14 +13,46 @@
                 <p class="text-gray-600">Date: {{ $lesson->date }}</p>
                 <p class="text-gray-600">Venue: {{ $lesson->venue }}</p>
                 <p class="text-gray-600">Course: {{ $lesson->course->title }}</p>
-                <div class="flex justify-between items-center">
-                    <a href="{{ route('lessons.edit', $lesson) }}" class="btn btn-primary">Edit</a>
-                    <form method="POST" action="{{ route('lessons.destroy', $lesson) }}">
+                <p>Attending: {{ $lesson->attending_members_count }}</p>
+                @if (!Auth::user()->lessons->contains($lesson->id))
+                    <form class="my-2 md:my-3" method="POST" action="{{ route('lesson.attend', $lesson) }}">
                         @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Delete</button>
+                        @method('POST')
+                        <p class="my-2 md:my-3 text-red-500">You are not attending !</p>
+                        <input class="hidden" value="{{ Auth::user()->id }}" type="text" name="user_id">
+                        <x-primary-button class="ring-orange-400 w-[150px] rounded-full">
+                            Attend <i class="fa-solid fa-graduation-cap"></i>
+                        </x-primary-button>
                     </form>
-                </div>
+                @else
+                    <form class="my-2 md:my-3" method="POST" action="{{ route('lesson.unattend', $lesson) }}">
+                        @csrf
+                        @method('POST')
+                        <input class="hidden" value="{{ Auth::user()->id }}" type="text" name="user_id">
+                        <p class="my-2 md:my-3 text-green-500">You are attending the lesson</p>
+                        <x-primary-button class="ring-orange-400 rounded-full">
+                            Un-attend <i class="fa-solid fa-minus-circle"></i>
+                        </x-primary-button>
+                    </form>
+                @endif
+
+                @can('manage')
+                    <div class="flex gap-3 items-center">
+                        <a href="{{ route('lessons.edit', $lesson) }}">
+                            <x-round-button class="btn hover:bg-blue-500">
+                                <i class="fa-solid fa-edit"></i>
+                            </x-round-button>
+                        </a>
+                        <form method="POST" action="{{ route('lessons.destroy', $lesson) }}">
+                            @csrf
+                            @method('DELETE')
+                            <x-round-button type="submit" class="btn hover:bg-red-500 btn-danger">
+                                <i class="fa-solid fa-trash"></i>
+                            </x-round-button>
+                        </form>
+                    </div>
+
+                @endcan
             </div>
         </div>
     </section>
