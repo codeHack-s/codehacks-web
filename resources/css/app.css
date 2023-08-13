@@ -79,3 +79,7 @@
     background: #555;
     height: 5px;
 }
+
+.side {
+    @apply duration-200 flex gap-2 items-center hover:bg-blue-700 hover:text-white p-2 rounded w-full bg-gray-200;
+}

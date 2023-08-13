@@ -22,7 +22,7 @@
     CodeHacks is a community of developers and tech enthusiasts learning to code, improving their skills, and building software projects."/>
     <meta name="twitter:image" content="{{asset('storage/images/logo.png')}}">
 
-    <link rel="icon" href="{{ asset('/images/fav.png') }}" type="image/png" sizes="16x16">
+    <link rel="icon" href="{{ asset('storage/images/fav.png') }}" type="image/png" sizes="16x16">
     <meta aria-description="
     CodeHacks is a community of developers and tech enthusiasts learning to code, improving their skills, and building software projects.
     ">
@@ -50,21 +50,26 @@
         }
 
         .swiper-slide {
-            background: url('{{ asset(' storage/images/codehacks.svg ') }}');
-            background-repeat: no-repeat;
+            background: url('{{ asset('storage/images/codehacks.svg ') }}');
             background-size: cover;
+            background-position: center;
+
         }
     </style>
 </head>
-<body class="bg-gray-100 h-screen antialiased leading-none">
 
-<div class="navbar sticky top-0 z-50 bg-base-100 px-6">
+<body class="bg-gray-100">
+
+<div class="navbar sticky top-0 z-50 bg-base-100 px-2 sm:px-6">
     <div class="navbar-start">
         <div class="dropdown">
             <a href="{{ route('about') }}" tabindex="0" class="btn btn-ghost btn-circle">
                 <i class="fa-solid fa-2x fa-circle-info"></i>
             </a>
         </div>
+        <a href="https://www.chuka.ac.ke/">
+            <img src="{{ asset('images/chuka.png') }}" alt="Chuka University" class="w-8 h-8">
+        </a>
     </div>
     <div class="navbar-center">
         <a href="{{ route('dashboard') }}" >
@@ -74,9 +79,9 @@
 
     <div class="navbar-end">
 
-        <button class="btn btn-ghost btn-circle">
+        <a href="https://github.com/codeHack-s" target="_blank" class="btn btn-ghost btn-circle">
             <i class="fa-brands fa-2x fa-github"></i>
-        </button>
+        </a>
 
         <button class="btn fa-2x btn-ghost btn-circle">
             <i class="fa-brands fa-2x fa-whatsapp"></i>
@@ -84,57 +89,91 @@
 
     </div>
 </div>
+<section class=overflow-x-hidden">
 
+    <div class="swiper-slide w-full">
+        {{--<img height="screen" src="/images/dark2.jpg" class="w-full min-h-64 object-cover" alt="image description">--}}
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+            <h1 class="text-1xl sm:text-2xl font-semibold text-white">Welcome to CodeHacks™️</h1>
+            <p class="text-white mt-2">Waitlist V 0.0.1</p>
+            <div class="space-x-4 flex items-center justify-center mt-4">
+                <!-- Register and login buttons with icons -->
+                <a href="{{ route('register') }}" class="">
+                    <button class="btn normal-case w-[120px] btn-warning backdrop-blur-md ring-offset-2 rounded-full btn-outline ring-2">
+                        <i class="fas fa-user-plus mr-1"></i>
+                        Register
+                    </button>
+                </a>
+                <a href="{{ route('login') }}" class="btn w-[120px] normal-case backdrop-blur-md btn-success rounded-full btn-outline ring-2 ring-offset-2 text-base-100">
+                    <i class="fas fa-sign-in-alt mr-1"></i>
+                    Login
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="p-2 sm:p-6">
+        <section class="info mt-2 text-gray-800 sm:my-4 py-8 bg-white shadow-sm flex flex-col gap-2 sm:gap-5 rounded-lg">
 
-<div class="mx-auto max-w-7xl">
-
-    <main class="">
-        <!-- Swiper -->
-        <div class="swiper-container relative">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-                <!-- Slides -->
-                <div style="background: url('{{ asset('storage/images/codehacks.svg') }}');
-                background-repeat: no-repeat;
-                background-size: cover;
-                " class="swiper-slide bg-[url('C:/Apps/cashout/public/images/cashout.svg')] h-fit">
-                    {{--<img height="screen" src="/images/dark2.jpg" class="w-full min-h-64 object-cover" alt="image description">--}}
-                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
-                        <h1 class="text-2xl font-semibold text-white">Welcome to CodeHacks™️</h1>
-                        <p class="text-white mt-2">The next level game changing code platform</p>
-                        <div class="space-x-4 flex items-center justify-center mt-4">
-                            <!-- Register and login buttons with icons -->
-                            <a href="{{ route('register') }}" class="">
-                                <button class="btn normal-case w-[120px] btn-warning backdrop-blur-md ring-offset-2 rounded-full btn-outline ring-2">
-                                    <i class="fas fa-user-plus mr-1"></i>
-                                    Register
-                                </button>
-                            </a>
-                            <a href="{{ route('login') }}" class="btn w-[120px] normal-case backdrop-blur-md btn-success rounded-full btn-outline ring-2 ring-offset-2 text-base-100">
-                                <i class="fas fa-sign-in-alt mr-1"></i>
-                                Login
-                            </a>
-                        </div>
-                    </div>
+            <div class="sm:px-6 flex flex-col gap-2 justify-center items-center px-2">
+                <div>
+                    <i class="fa-solid fa-4x fa-meteor"></i>
                 </div>
-
-                <div class="custom-shape-divider-bottom-1689080022">
-                    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-                    </svg>
+                <div>
+                    <h2 class="text-2xl font-bold mb-6 text-gray-600">
+                        Welcome to CodeHacks™️
+                    </h2>
+                    <p class="text-lg leading-6">
+                        At CodeHacks, we're creating a vibrant community of tech enthusiasts, budding developers, and seasoned professionals. Here, you can dive into the world of coding, enhance your existing skills, and work collaboratively on innovative software projects.
+                    </p>
                 </div>
-
-                <!-- Add more slides as needed -->
             </div>
 
-        </div>
+            <!-- Chuka University logo -->
+            <div class="flex justify-center my-6">
+                <img src="{{ asset('images/chuka.png') }}" alt="Chuka University" class="w-24 h-24">
+            </div>
 
-        <div>
+            <div class="sm:px-6 px-2">
+                <div class="sm:px-6 flex flex-col gap-2 justify-center items-center px-2">
+                    <div>
+                        <i class="fa-regular fa-4x fa-handshake"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-2xl mb-4 text-gray-600">In Partnership with Chuka University</h3>
+                        <p class="text-lg leading-6 mb-6">Our strategic partnership with Chuka University enables us to provide top-notch, industry-standard tech education. We combine our tech-savvy approach with Chuka University's academic excellence to bring you the best learning experience in the tech world.</p>
+                    </div>
+                </div>
+                <div class="sm:px-6 flex flex-col gap-2 justify-center items-center px-2">
+                    <div>
+                        <i class="fa-solid fa-4x fa-rocket"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-2xl my-4 text-gray-600">
+                            We're Building Something Awesome</h3>
+                        <p class="text-lg leading-6 mb-6">We're currently hard at work constructing our website to give you a seamless learning and community experience. It's going to be worth the wait!</p>
+                    </div>
+                </div>
+            </div>
 
-        </div>
-    </main>
-</div>
+            <div class="sm:px-6 px-2 mt-6">
+                <div class="sm:px-6 flex flex-col gap-2 justify-center items-center px-2">
+                    <div>
+                        <i class="fa-solid fa-4x fa-shield-halved"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-2xl mb-4 text-gray-600">We're Now Live</h3>
+                        <p class="text-lg leading-6 mb-6">
+                            We're now live! You can now register a new account or login to your account. We'll be rolling out new features and updates regularly, so stay tuned!
+                            <br>
+                            For those members who registered before the launch, you can now log in to your account and access the platform.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+    </div>
+</section>
 <!-- Swiper JS -->
 
 <!-- Scripts -->

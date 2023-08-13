@@ -19,7 +19,7 @@
         </div>
 
     @else
-        <div class="overflow-x-auto">
+        <div class="overflow-x-clip">
             <table class="table table-zebra-zebra">
                 <thead>
                 <tr class="bg-gray-200">

@@ -38,7 +38,7 @@ Route::middleware(['auth','verified'])->group(function () {
     Route::get('courses/{course}', [CourseController::class, 'show'])->name('courses.show');
 
     //define index route
-    Route::get('courses', [CourseController::class, 'index'])->name('courses.index');
+    Route::get('/courses', [CourseController::class, 'index'])->name('courses.index');
     Route::post('courses/{course}/enroll', [CourseController::class, 'enroll'])->name('courses.enroll');
 
     Route::post('lessons/{lesson}/attend', [LessonController::class, 'attend'])->name('lesson.attend');
@@ -58,6 +58,11 @@ Route::middleware(['auth','verified'])->group(function () {
     //lessons.students
     Route::get('lessons/{lesson}/students', [LessonController::class, 'students'])->name('lessons.students');
 
+    //connect.index
+    Route::get("/connect")->name('connect.index');
+
+    //events.index
+    Route::get('/events')->name('events.index');
 });
 
 Route::get('about', function () {

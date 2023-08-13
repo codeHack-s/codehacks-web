@@ -70,7 +70,8 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    //Kenya Timezone
+    'timezone' => 'Africa/Nairobi',
 
     /*
     |--------------------------------------------------------------------------
