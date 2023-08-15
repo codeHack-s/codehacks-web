@@ -1,12 +1,26 @@
 <div class="drawer">
     <input id="my-drawer" type="checkbox" class="drawer-toggle" />
     <div class="drawer-content">
-        <!-- Page content here -->
+
     </div>
     <div class="z-40 drawer-side">
         <label for="my-drawer" class="drawer-overlay"></label>
+
         <div class="menu p-4 pt-[100px] w-64 h-full bg-base-200 text-base-content gap-4 flex flex-col justify-start items-start">
+            <!-- App Logo -->
+            <div class="flex items-center justify-center gap-4">
+                <a href="{{ route('dashboard') }}">
+                    <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
+                </a>
+            </div>
+
             <!-- Sidebar content here -->
+            <a class="side" href="{{ route('dashboard') }}" >
+                <i class="fa-solid fa-home-lg"></i>
+                <div class="">
+                    Dashboard
+                </div>
+            </a>
 
             <a class="side" href="{{ route('courses.index') }}" >
                 <i class="fa-solid fa-graduation-cap"></i>

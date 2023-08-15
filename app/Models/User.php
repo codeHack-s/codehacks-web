@@ -62,4 +62,9 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->email == 'tomsteve187@gmail.com';
     }
+
+    public function isPremium(): bool
+    {
+        return $this->subscription_status == 'premium';
+    }
 }

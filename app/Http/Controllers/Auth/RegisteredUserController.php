@@ -40,6 +40,23 @@ class RegisteredUserController extends Controller
             'phone_number' => ['nullable', 'string', 'max:255'],
         ]);
 
+        $contact = $request->contact;
+
+        //remove the first character if it's a '+'
+        if (str_starts_with($contact, '+')) {
+            $contact = substr($contact, 1);
+        }
+
+        //dd($contact);
+
+        // Check if the first character of the string is '0'
+        if (str_starts_with($contact, '0')) {
+            // Replace the first character '0' with '254'
+            $contact = '254' . substr($contact, 1);
+        }
+
+        $request->merge(['contact' => $contact]);
+
         $user = User::create([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
