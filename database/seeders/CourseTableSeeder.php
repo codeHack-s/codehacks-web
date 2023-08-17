@@ -37,12 +37,12 @@ class CourseTableSeeder extends Seeder
 
         for ($i = 0; $i < count($course_titles); $i++) {
             Course::create([
-                'user_id' => 3,
+                'user_id' => 1,
                 'title' => $course_titles[$i],
                 'description' => $course_descriptions[$i],
                 'online' => rand(0, 1),
-                'created_by' => 3,
-                'updated_by' => 3,
+                'created_by' => 1,
+                'updated_by' => 1,
                 'image_url' => '/images/bg' . ($i % 5 + 1) . '.jpg'
             ]);
         }

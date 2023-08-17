@@ -1,5 +1,15 @@
 <div>
-    <section class="Raccoon Search m-3 w-full flex justify-end">
+    <section class="Raccoon Search m-3 w-full flex gap-4 items-center justify-end">
+        <!--Button to create a new course-->
+        @can('manage')
+            <div data-tip="Create a new lesson" class="tooltip">
+                <a href="{{ route('lessons.create') }}">
+                    <button class="btn btn-circle ring btn-sm">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </a>
+            </div>
+        @endcan
         <div class="w-full sm:w-1/4 sm:mx-4">
             <label class="relative">
                 <input class="input input-bordered h-10 w-full max-w-xs" wire:model="search" type="text" placeholder="Search any text...">

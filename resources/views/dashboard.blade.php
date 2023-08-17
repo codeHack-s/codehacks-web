@@ -26,32 +26,41 @@
                     </div>
 
                     <div class="mb-4 w-full flex flex-wrap gap-4">
-                        <div class="card w-full sm:w-5/12 p-0 rounded bg-base-100 shadow">
+
+
+                        @php
+                            $bgColorClass = Auth::user()->subscription_status === 'pro' ? 'bg-blue-50' : (Auth::user()->subscription_status === 'platinum' ? 'bg-orange-50' : 'bg-base-50');
+                            $shadowClass = Auth::user()->subscription_status === 'pro' ? 'shadow-blue' : (Auth::user()->subscription_status === 'platinum' ? 'shadow-orange' : 'shadow');
+                            $ringColorClass = Auth::user()->subscription_status === 'pro' ? 'ring-blue-700' : (Auth::user()->subscription_status === 'platinum' ? 'ring-orange-700' : '');
+                            $textColorClass = Auth::user()->subscription_status === 'pro' ? 'text-blue-700' : (Auth::user()->subscription_status === 'platinum' ? 'text-orange-700' : '');
+                        @endphp
+
+                         <div class="card w-full sm:w-5/12 p-0 rounded {{ $bgColorClass }} {{ $shadowClass }}">
                             <div class="card-body m-[-10px]">
                                 <h2 class="card-title">
                                     <!-- User Package -->
                                     Membership Plan
                                 </h2>
-                                <p>Your membership plan is <span class="font-sans font-bold text-orange-700 text-2xl">{{ Auth::user()->subscription_status}}</span></p>
+                                <p>Your membership plan is <span class="font-sans font-bold {{ $textColorClass }} text-2xl">{{ Auth::user()->subscription_status}}</span></p>
                                 <div class="card-actions gap-3 justify-end">
-                                    <button class="btn ring ring-blue-700 btn-circle hover:bg-base-100">
+                                    <button class="btn ring {{ $ringColorClass }} btn-circle hover:bg-base-100">
                                         <i class="fa-solid fa-graduation-cap"></i>
                                     </button>
-                                    <button class="btn hover:bg-base-100 ring ring-orange-700 btn-circle">
+                                    <button class="btn hover:bg-base-100 {{ $ringColorClass }}  btn-circle">
                                         <i class="fa-solid fa-code"></i>
                                     </button>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="card w-full sm:w-5/12 p-0 rounded bg-base-100 shadow">
+                        <div class="card w-full sm:w-5/12 p-0 rounded {{ $bgColorClass }} {{ $shadowClass }}">
                             <div class="card-body m-[-10px]">
                                 <h2 class="card-title">Activity</h2>
                                 <p>You have been online for
                                     <span id="timeOnline" class="font-sans font-bold text-orange-700 text-2xl"></span>
                                 </p>
                                 <div class="card-actions justify-end">
-                                    <button class="btn ring ring-orange-700 btn-circle">
+                                    <button class="btn ring {{ $ringColorClass }}  btn-circle">
                                         <i class="fa-solid fa-clock-rotate-left"></i>
                                     </button>
                                 </div>
