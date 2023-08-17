@@ -69,6 +69,7 @@ class RegisteredUserController extends Controller
         event(new Registered($user));
 
         Auth::login($user);
+        Auth::user()->update(['last_login_at' => now()]);
 
         // Send verification email
         if(!$user->hasVerifiedEmail()) {
