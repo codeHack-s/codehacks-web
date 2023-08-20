@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\LessonController;
+use App\Http\Controllers\PricingController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -63,6 +64,18 @@ Route::middleware(['auth','verified'])->group(function () {
 
     //events.index
     Route::get('/events')->name('events.index');
+
+    //pricing
+    Route::get('/pricing', [PricingController::class, 'index'])->name('pricing.index');
+    //pricing.plans
+    Route::get('/pricing/gold', [PricingController::class, 'gold'])->name('pricing.gold');
+    Route::get('/pricing/platinum', [PricingController::class, 'platinum'])->name('pricing.platinum');
+    Route::get('/pricing/pro', [PricingController::class, 'pro'])->name('pricing.pro');
+
+    //response
+    Route::get('/response', function () {
+        return view('codehacks.response');
+    })->name('response');
 });
 
 Route::get('about', function () {
