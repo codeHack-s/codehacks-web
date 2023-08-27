@@ -39,7 +39,16 @@
 
             @foreach($courses as $course)
                 <tr class="items-center my-3">
-                    <td>{{ $course->title }}</td>
+                    @php
+                        //Auth::user()->courses->contains($course->id)
+                        $isRegistered = Auth::user()->courses->contains($course->id);
+                    @endphp
+                    <td>{{ $course->title }}
+                        <span class="text-xs italic text-gray-500">
+                            {{ $isRegistered ? '(Registered)' : '' }}
+                        </span>
+                    </td>
+
                     <!--Only 50 characters of the description are shown-->
                     <td class="w-[450px]">{{ Str::limit($course->description, 200) }}</td>
                     <td>{{ $course->online ? 'Yes' : 'No' }}</td>

@@ -1,9 +1,6 @@
 <!DOCTYPE html>
-@php
-    $bgColorClass = Auth::user()->subscription_status === 'pro' ? 'bg-blue-50' : (Auth::user()->subscription_status === 'platinum' ? 'bg-orange-50' : 'bg-base-50');
-    $theme = Auth::user()->subscription_status === 'pro' ? 'cupcake' : (Auth::user()->subscription_status === 'platinum' ? 'cupcake':'light');
-    @endphp
-<html data-theme="{{ $theme }}" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
+<html data-theme="light" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">

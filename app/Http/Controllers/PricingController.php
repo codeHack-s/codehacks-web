@@ -23,15 +23,19 @@ class PricingController
 
         $user = Auth::user();
         $amount = ENV('GOLD_PRICE');
-        $phone = $user->phone_number;
+        if (!$user) {
+            return redirect()->route('login');
+        }else{
+            $phone = $user->phone_number;
+        }
 
         //replace 0 at the beginning with 254
-        if (substr($phone, 0, 1) == "0") {
+        if (str_starts_with($phone, "0")) {
             $phone = preg_replace('/^0/', '254', $phone);
         }
 
         //remove + at the beginning
-        if (substr($phone, 0, 1) == "+") {
+        if (str_starts_with($phone, "+")) {
             $phone = preg_replace('/^+/', '', $phone);
         }
 

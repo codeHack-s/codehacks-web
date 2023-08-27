@@ -9,11 +9,6 @@ class Lesson extends Model
 {
     use HasFactory;
 
-    /*
-     * Lesson Model:
-
-Fields: id, course_id, title, description, venue(if physical), date, registered_members_count, attending_members_count, created_at, updated_at*/
-
     protected $fillable = [
         'course_id',
         'title',

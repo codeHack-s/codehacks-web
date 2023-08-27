@@ -67,4 +67,19 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->subscription_status == 'premium';
     }
+
+    public function nextLesson(): ?Lesson
+    {
+        // Get the current user's attending lessons sorted by date in ascending order
+        $attendingLessons = $this->lessons()->where('date', '>', now())->orderBy('date', 'asc')->get();
+
+        // Return the first upcoming lesson, or null if there are no upcoming lessons
+        return $attendingLessons->first();
+    }
+
+    public function registered_courses_count(): int
+    {
+        return $this->courses()->count();
+    }
+
 }

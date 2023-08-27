@@ -98,6 +98,11 @@ class LessonController extends Controller
             return redirect()->route('lessons.students', $lesson->id)->with('error', 'User is already registered for this lesson');
         }
 
+        //if the lesson is past the date, don't allow to register
+        if ($lesson->date < now()) {
+            return redirect()->route('lessons.show', $lesson->id)->with('error', 'Lesson is in the past');
+        }
+
         //attach the user to the lesson
         $user->lessons()->attach($lesson->id, ['created_at' => now(), 'updated_at' => now()]);
 
@@ -123,6 +128,11 @@ class LessonController extends Controller
         // Check if the user is already enrolled in the course
         if (!$user->lessons()->where('lesson_id', $lesson->id)->exists()) {
             return redirect()->route('courses.show', $lesson)->with('error', 'User is not attending');
+        }
+
+        //if the lesson is past the date, don't allow to unregister
+        if ($lesson->date < now()) {
+            return redirect()->route('lessons.show', $lesson->id)->with('error', 'Lesson is in the past');
         }
 
         // Detach the course from the user
