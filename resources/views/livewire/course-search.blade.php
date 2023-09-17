@@ -9,6 +9,7 @@
                 </a>
             </div>
         @endcan
+
         <div class="w-full sm:w-1/4 sm:mx-4">
             <label class="relative">
                 <input class="input input-bordered h-10 w-full max-w-xs" wire:model="search" type="text" placeholder="Search any text...">
