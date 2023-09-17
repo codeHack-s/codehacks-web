@@ -8,7 +8,7 @@
         <!-- Welcome -->
         <div class="flex items-center flex-col my-4 sm:my-6 md:my-8 justify-center">
             <h1 class="sm:text-3xl text-2xl font-bold text-gray-900">Welcome Back!</h1>
-            <p class="text-xs italic text-gray-400 ml-2">Please fill in your credentials to continue to your acc.</p>
+            <p class="text-xs italic text-gray-400 ml-2">Please fill in your credentials to proceed.</p>
         </div>
 
         <!-- Email Address -->
