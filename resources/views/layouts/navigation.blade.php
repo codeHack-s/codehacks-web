@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-white border-b fixed w-full z-50 border-gray-100">
 
     <!-- Primary Navigation Menu -->
 
@@ -7,7 +7,7 @@
             <div class="flex items-center justify-center gap-4">
 
                 <!-- Drawer Button -->
-                <section data-tip="SideBar" class="tooltip tooltip-bottom m-0 p-0 shrink-0 flex items-center">
+                <section data-tip="SideBar" class="tooltip tooltip-bottom m-0 p-0 shrink-0 flex items-center md:hidden">
                     <label for="my-drawer" class="drawer-button swap swap-rotate">
 
                         <!-- this hidden checkbox controls the state -->
@@ -24,11 +24,6 @@
                 </section>
 
                 <!-- Logo -->
-                <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
-                    </a>
-                </div>
 
                 <!-- Navigation Links -->
                 <!-- Deprecated -->

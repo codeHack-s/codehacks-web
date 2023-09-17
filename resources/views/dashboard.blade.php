@@ -52,8 +52,8 @@
                         <div class="card w-full sm:w-5/12 p-0 rounded bg-base-100 shadow">
                             <div class="card-body m-[-10px]">
                                 <h2 class="card-title">Activity</h2>
-                                <p>You have been online for
-                                    <span id="timeOnline" class="font-sans font-bold text-orange-700 text-2xl"></span>
+                                <p class="w-full">Online session time
+                                    <span id="timeOnline" class="font-sans font-bold text-orange-700 text-2xl min-w-[100px]"></span>
                                 </p>
                                 <div class="card-actions justify-end">
                                     <button class="btn ring ring-orange-700 btn-circle">
@@ -70,7 +70,7 @@
                         <div class="card w-full sm:w-5/12 p-0 rounded bg-base-100 shadow">
                             <div class="card-body m-[-10px]">
                                 <h2 class="card-title">Meeting</h2>
-                                <p>The next lesson is in
+                                <p>Next lesson in
                                     <span id="next" class="font-sans font-bold text-orange-700 text-2xl">
                                         @if($nextLesson)
                                             {{ $nextLesson->date->diffForHumans() }}

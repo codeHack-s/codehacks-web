@@ -30,23 +30,19 @@
 
             @include('layouts.navigation')
             <!-- || -->
-            @section('sidebar')
-                @include('layouts.sidebar')
-            @show
 
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl text-gray-800 mx-auto py-2 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
+            <section class="flex">
 
-            <!-- Page Content -->
-            <main class="p-2 sm:p-4 overflow-clip">
-                {{ $slot }}
-            </main>
+                @section('sidebar')
+                    @include('layouts.sidebar')
+                @show
+
+                <!-- Page Content -->
+                <main class="p-2 sm:p-4 w-full mt-14 overflow-clip">
+                    {{ $slot }}
+                </main>
+
+            </section>
 
         </div>
     </body>
