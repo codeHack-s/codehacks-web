@@ -9,11 +9,12 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: SSH and deploy
-        env:
-          SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
-          HOST: ${{ secrets.SERVER_HOST }}
-          USERNAME: ${{ secrets.SERVER_USERNAME }}
-        run: |
-            sudo apt-get install -y sshpass
-            sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $USERNAME@$HOST "/opt/scripts/deploy.sh"
+    - name: SSH and deploy
+      env:
+        PRIVATE_KEY: ${{ secrets.SERVER_SSH_PRIVATE_KEY }}
+        HOST: ${{ secrets.SERVER_HOST }}
+        USERNAME: ${{ secrets.SERVER_USERNAME }}
+      run: |
+        echo "$PRIVATE_KEY" > private_key.pem
+        chmod 600 private_key.pem
+        ssh -o StrictHostKeyChecking=no -i private_key.pem $USERNAME@$HOST "/opt/scripts/deploy.sh"
