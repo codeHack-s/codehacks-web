@@ -1,4 +1,4 @@
-# CodeHacks™️[![Laravel CI](https://github.com/codeHack-s/codehacks-web/actions/workflows/laravel.yml/badge.svg)](https://github.com/codeHack-s/codehacks-web/actions/workflows/laravel.yml)
+# CodeHacks™️[![Auto Deploy](https://github.com/codeHack-s/codehacks-web/actions/workflows/laravel.yml/badge.svg)](https://github.com/codeHack-s/codehacks-web/actions/workflows/laravel.yml)
 CodeHacks is an interactive community-driven platform designed to teach coding, freelance skills, software usage, and more to our subscribed members. This project is built using Laravel, a robust PHP framework, along with Laravel Breeze for simple yet effective authentication.
 
 ## Features
