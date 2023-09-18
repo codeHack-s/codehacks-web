@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Tailwind CSS -->
-    <title>Cashout</title>
+    <title>Codehacks</title>
     <script src="https://kit.fontawesome.com/af6aba113a.js" crossorigin="anonymous"></script>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">

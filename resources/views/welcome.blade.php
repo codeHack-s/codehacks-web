@@ -73,7 +73,7 @@
     </div>
     <div class="navbar-center">
         <a href="{{ route('dashboard') }}" >
-            <img src="{{ asset('storage/images/codew.png') }}" alt="Cashout" class="w-28 sm:w-32 mix-blend-screen">
+            <img src="{{ asset('storage/images/codew.png') }}" alt="Codehacks" class="w-28 sm:w-32 mix-blend-screen">
         </a>
     </div>
 
