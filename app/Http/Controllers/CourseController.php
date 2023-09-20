@@ -25,7 +25,7 @@ class CourseController extends Controller
      */
     public function create(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Contracts\Foundation\Application
     {
-        if(Auth::user()->email == 'tomsteve187@gmail.com'){
+        if(Auth::user()->email == 'tomsteve187@gmail.com'||Auth::user()->email == 'samson2020odhiambo@gmail.com'){
             return view('courses.create');
         } else {
             return redirect()->route('courses.index')->with('error', 'Unauthorized');
@@ -76,7 +76,7 @@ class CourseController extends Controller
      */
     public function edit(Course $course): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Contracts\Foundation\Application
     {
-        if(Auth::user()->email == 'tomsteve187@gmail.com'){
+        if(Auth::user()->email == 'tomsteve187@gmail.com'||Auth::user()->email == 'samson2020odhiambo@gmail.com'){
             return view('courses.edit', compact('course'));
         } else {
             return redirect()->route('courses.index')->with('error', 'Unauthorized');
@@ -122,7 +122,7 @@ class CourseController extends Controller
      */
     public function destroy(Course $course): \Illuminate\Http\RedirectResponse
     {
-        if(Auth::user()->email == 'tomsteve187@gmail.com'){
+        if(Auth::user()->email == 'tomsteve187@gmail.com'||Auth::user()->email == 'samson2020odhiambo@gmail.com'){
             $course->delete();
             return redirect()->route('courses.index')->with('success', 'Course deleted successfully');
         } else {

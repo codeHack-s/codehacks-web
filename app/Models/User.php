@@ -60,7 +60,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function isAdmin(): bool
     {
-        return $this->email == 'tomsteve187@gmail.com';
+        return $this->email == 'samson2020odhiambo@gmail.com'||'tomsteve187@gmail.com';
     }
 
     public function isPremium(): bool

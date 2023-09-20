@@ -95,7 +95,7 @@
         {{--<img height="screen" src="/images/dark2.jpg" class="w-full min-h-64 object-cover" alt="image description">--}}
         <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
             <h1 class="text-1xl sm:text-2xl font-semibold text-white">Welcome to CodeHacks™️</h1>
-            <p class="text-white mt-2">Waitlist V 0.0.1</p>
+            <p class="text-white mt-2">WaitList V 0.0.1</p>
             <div class="space-x-4 flex items-center justify-center mt-4">
                 <!-- Register and login buttons with icons -->
                 <a href="{{ route('register') }}" class="">
