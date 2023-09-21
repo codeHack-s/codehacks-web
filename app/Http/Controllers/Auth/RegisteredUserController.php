@@ -19,9 +19,15 @@ class RegisteredUserController extends Controller
     /**
      * Display the registration view.
      */
-    public function create(): View
+    public function create(Request $request, $type = null): View
     {
-        return view('auth.register');
+        if ($type === 'campus') {
+            return view('auth.register');
+        } elseif ($type === 'innovate') {
+            return view('auth.register-innovate');
+        } else {
+            return view('auth.select-account-type');
+        }
     }
 
     /**

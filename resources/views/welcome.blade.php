@@ -98,7 +98,7 @@
             <p class="text-white mt-2">WaitList V 0.0.1</p>
             <div class="space-x-4 flex items-center justify-center mt-4">
                 <!-- Register and login buttons with icons -->
-                <a href="{{ route('register') }}" class="">
+                <a href="{{ route('register-default') }}" class="">
                     <button class="btn normal-case w-[120px] btn-warning backdrop-blur-md ring-offset-2 rounded-full btn-outline ring-2">
                         <i class="fas fa-user-plus mr-1"></i>
                         Register
@@ -133,9 +133,8 @@
                 <img src="{{ asset('images/chuka.png') }}" alt="Chuka University" class="w-24 h-24">
             </div>
 
-            <div class="sm:px-6 px-2">
                 <div class="sm:px-6 flex flex-col gap-2 justify-center items-center px-2">
-                    <div>
+                <div>
                         <i class="fa-regular fa-4x fa-handshake"></i>
                     </div>
                     <div>
@@ -143,6 +142,7 @@
                         <p class="text-lg leading-6 mb-6">Our strategic partnership with Chuka University enables us to provide top-notch, industry-standard tech education. We combine our tech-savvy approach with Chuka University's academic excellence to bring you the best learning experience in the tech world.</p>
                     </div>
                 </div>
+
                 <div class="sm:px-6 flex flex-col gap-2 justify-center items-center px-2">
                     <div>
                         <i class="fa-solid fa-4x fa-rocket"></i>
@@ -150,12 +150,11 @@
                     <div>
                         <h3 class="font-bold text-2xl my-4 text-gray-600">
                             We're Building Something Awesome</h3>
-                        <p class="text-lg leading-6 mb-6">We're currently hard at work constructing our website to give you a seamless learning and community experience. It's going to be worth the wait!</p>
+                        <p class="text-lg leading-6 mb-6">We're currently hard at work constructing our website to give you a seamless learning and community experience. It's going to be worth the wait!. We are also launching CODEHACKS Campus and CodeHacks Innovate.
+                        </p>
                     </div>
                 </div>
-            </div>
 
-            <div class="sm:px-6 px-2 mt-6">
                 <div class="sm:px-6 flex flex-col gap-2 justify-center items-center px-2">
                     <div>
                         <i class="fa-solid fa-4x fa-shield-halved"></i>
@@ -164,12 +163,11 @@
                         <h3 class="font-bold text-2xl mb-4 text-gray-600">We're Now Live</h3>
                         <p class="text-lg leading-6 mb-6">
                             We're now live! You can now register a new account or login to your account. We'll be rolling out new features and updates regularly, so stay tuned!
-                            <br>
                             For those members who registered before the launch, you can now log in to your account and access the platform.
                         </p>
                     </div>
                 </div>
-            </div>
+
         </section>
 
     </div>
