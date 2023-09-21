@@ -40,7 +40,7 @@
 
         <div class="flex items-center justify-between mt-4">
             <!-- Register -->
-            <a class="underline text-sm text-gray-600 hover:text-blue-500" href="{{ route('register') }}">
+            <a class="underline text-sm text-gray-600 hover:text-blue-500" href="{{ route('register-default') }}">
                 {{ __('New Here ?') }}
             </a>
 
