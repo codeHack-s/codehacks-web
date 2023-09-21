@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -26,6 +27,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'phone_number',
         'subscription_status',
         'last_login_at',
+        'user_type',
     ];
 
     /**
@@ -48,12 +50,12 @@ class User extends Authenticatable implements MustVerifyEmail
         'password' => 'hashed',
     ];
 
-    public function courses(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    public function courses(): BelongsToMany
     {
         return $this->belongsToMany(Course::class, 'enrollments');
     }
 
-    public function lessons(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    public function lessons(): BelongsToMany
     {
         return $this->belongsToMany(Lesson::class, 'attendance');
     }
