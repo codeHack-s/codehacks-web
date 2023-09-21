@@ -6,7 +6,7 @@
         <center>Select Account Type</center>
     </section>
 
-    <section class="links flex mb-4 gap-3">
+    <section class="links flex justify-center mb-4 gap-3">
         <div data-tip="For Chuka Uni students"  class="tooltip tooltip-bottom">
             <a class="btn btn-outline btn-primary ring normal-case" href="{{ route('register', ['type' => 'campus']) }}">Codehacks Campus</a>
         </div>
