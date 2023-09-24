@@ -13,7 +13,9 @@
 
                 <!-- Display greeting according to time of day -->
                 <div class="mb-4">
+
                     <h3 class="text-lg font-semibold">{{ __('Welcome') }}</h3>
+
                     <p>
                         @php
                             $hour = date('H');
@@ -68,6 +70,7 @@
                         @php
                             $nextLesson = Auth::user()->nextLesson();
                         @endphp
+
                         <div class="card w-full sm:w-5/12 p-0 rounded bg-base-100 shadow">
                             <div class="card-body m-[-10px]">
                                 <h2 class="card-title">Meeting</h2>
@@ -191,10 +194,10 @@
         }, 1000);
 
         @if($nextLesson)
-            function updateNextLessonTime() {
-                let nextLessonStart = new Date('{{ $nextLesson->date }}');
-                updateTimeDifference(nextLessonStart, 'next');
-            }
+        function updateNextLessonTime() {
+            let nextLessonStart = new Date('{{ $nextLesson->date }}');
+            updateTimeDifference(nextLessonStart, 'next');
+        }
         @endif
 
     </script>
