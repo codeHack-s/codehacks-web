@@ -23,9 +23,9 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'verified', 'user.type:campus'])->name('dashboard');
 
-Route::middleware(['auth','verified'])->group(function () {
+Route::middleware(['auth','verified', 'user.type:campus'])->group(function () {
 
     //breeze routes
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -81,5 +81,11 @@ Route::middleware(['auth','verified'])->group(function () {
 Route::get('about', function () {
     return view('codehacks.about');
 })->name('about');
+
+
+Route::get('innovate-dashboard', function () {
+    return view('innovate.dashboard');
+})->middleware(['auth', 'verified'])->name('innovate.dashboard');
+
 
 require __DIR__.'/auth.php';

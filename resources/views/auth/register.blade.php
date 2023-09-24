@@ -1,10 +1,10 @@
 <x-guest-layout>
-    <form method="POST" action="{{ route('register.store') }}">
-        @csrf
+    <form method="POST" action="{{ route('campus') }}">
 
+        @csrf
         <!-- Welcome -->
         <div class="flex items-center my-4 sm:my-6 md:my-8 justify-center">
-            <h1 class="sm:text-3xl text-2xl font-bold text-gray-900">Welcome to {{ config('app.name', 'Laravel') }}</h1>
+            <h1 class="sm:text-3xl text-2xl font-bold text-gray-900">{{ config('app.name', 'Laravel') }} Campus</h1>
         </div>
 
         <section class="names flex w-full gap-2 items-center justify-center">
