@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\ConnectController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\PricingController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ThemeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -60,7 +62,7 @@ Route::middleware(['auth','verified', 'user.type:campus'])->group(function () {
     Route::get('lessons/{lesson}/students', [LessonController::class, 'students'])->name('lessons.students');
 
     //connect.index
-    Route::get("/connect")->name('connect.index');
+    Route::get("/connect", [ConnectController::class, 'index'])->name('connect.index');
 
     //events.index
     Route::get('/events')->name('events.index');
@@ -85,7 +87,9 @@ Route::get('about', function () {
 
 Route::get('innovate-dashboard', function () {
     return view('innovate.dashboard');
-})->middleware(['auth', 'verified'])->name('innovate.dashboard');
+})->middleware(['auth', 'verified','user.type:innovate'])->name('innovate.dashboard');
 
+Route::post('/set-theme', [ThemeController::class, 'setTheme'])->name('set-theme');
+Route::get('/get-theme', [ThemeController::class, 'getTheme'])->name('get-theme');
 
 require __DIR__.'/auth.php';
