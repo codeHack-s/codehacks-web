@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-base-100 border-b fixed w-full z-50 border-gray-100">
+<nav x-data="{ open: false }" class="bg-base-100 border-b fixed w-full z-50 border-gray-500">
 
     <!-- Primary Navigation Menu -->
 

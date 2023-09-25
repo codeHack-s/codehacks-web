@@ -23,6 +23,13 @@ class Lesson extends Model
         'date' => 'datetime',
     ];
 
+
+    function getSvgAttribute(): string
+    {
+        //get the course image that is associated with this lesson
+        return '/storage/images/1695652763.svg';
+    }
+
     public function getImageAttribute(): string
     {
         $randomImages = [
