@@ -2,8 +2,8 @@
 
     <!-- Primary Navigation Menu -->
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
+    <div class="px-4 sm:px-2 lg:px-4">
+        <div class="flex w-full justify-between h-16">
             <div class="flex items-center justify-center gap-4">
 
                 <!-- Drawer Button -->
