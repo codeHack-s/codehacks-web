@@ -23,10 +23,6 @@
                     </label>
                 </section>
 
-                <!-- Logo -->
-
-                <!-- Navigation Links -->
-                <!-- Deprecated -->
 
             </div>
 
