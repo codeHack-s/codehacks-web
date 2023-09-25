@@ -50,6 +50,11 @@ class User extends Authenticatable implements MustVerifyEmail
         'password' => 'hashed',
     ];
 
+    public function getNameAttribute(): string
+    {
+        return $this->first_name . ' ' . $this->last_name;
+    }
+
     public function courses(): BelongsToMany
     {
         return $this->belongsToMany(Course::class, 'enrollments');
