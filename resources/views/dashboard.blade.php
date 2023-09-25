@@ -26,8 +26,8 @@
                     <div class="mb-4">
                     </div>
 
-                    <div class="mb-4 w-full flex flex-wrap gap-4">
-                        <div class="card w-full sm:w-5/12 p-0 rounded shadow shadow-gray-400">
+                    <div class="mb-4 w-full grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="card w-full p-0 rounded shadow shadow-gray-400">
                             <div class="card-body m-[-10px]">
                                 <h2 class="card-title">
                                     <!-- User Package -->
@@ -49,7 +49,7 @@
                         </div>
 
                         <!-- Display User Activity -->
-                        <div class="card w-full sm:w-5/12 p-0 rounded shadow shadow-gray-400">
+                        <div class="card w-full p-0 rounded shadow shadow-gray-400">
                             <div class="card-body m-[-10px]">
                                 <h2 class="card-title">Activity</h2>
                                 <p class="w-full">Online session time
@@ -67,7 +67,7 @@
                         @php
                             $nextLesson = Auth::user()->nextLesson();
                         @endphp
-                        <div class="card w-full sm:w-5/12 p-0 rounded bg-base-100 shadow shadow-gray-400">
+                        <div class="card w-full p-0 rounded bg-base-100 shadow shadow-gray-400">
                             <div class="card-body m-[-10px]">
                                 <h2 class="card-title">Meeting</h2>
                                 <p>Next lesson in
@@ -129,7 +129,7 @@
 
                         <!-- Display Registered Courses -->
 
-                        <div class="card w-full sm:w-5/12 p-0 rounded bg-base-100 shadow shadow-gray-400">
+                        <div class="card w-full p-0 rounded bg-base-100 shadow shadow-gray-400">
                             <div class="card-body m-[-10px]">
                                 <h2 class="card-title">Registered Courses</h2>
                                 <p>You have
