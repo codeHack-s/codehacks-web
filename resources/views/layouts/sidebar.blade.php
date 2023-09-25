@@ -6,7 +6,7 @@
     <div class="z-40 drawer-side">
         <label for="my-drawer" class="drawer-overlay"></label>
 
-        <div class="menu p-4 pt-[70px] w-64 h-full bg-base-100 border-r text-base-content gap-4 flex flex-col justify-start items-start">
+        <div class="menu overflow-clip p-4 pt-[70px] w-64 h-full bg-base-100 border-r text-base-content gap-4 flex flex-col justify-start items-start">
             <!-- App Logo -->
             <div class="flex items-center w-full justify-center gap-4">
                 <a href="{{ route('dashboard') }}">
