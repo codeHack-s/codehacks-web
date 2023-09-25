@@ -12,7 +12,8 @@
         @endcan
         <div class="w-full sm:w-1/4 sm:mx-4">
             <label class="relative">
-                <input class="input input-bordered h-10 w-full max-w-xs" wire:model="search" type="text" placeholder="Search any text...">
+                <input class="input input-bordered h-10 w-full max-w-xs" wire:model="search" type="text"
+                       placeholder="Search any text...">
                 <span class="absolute top-[-10px] right-1 text-[10px] text-gray-500">Powered by Raccoon</span>
             </label>
         </div>
@@ -24,7 +25,7 @@
         <div class="flex justify-center items-center">
             <div class="flex flex-col items-center">
                 <img src="{{ asset('storage/images/logo.png') }}" class="w-72 h-72" alt="No courses found">
-                <h1 class="text-3xl text-gray-700 font-semibold">No lessons</h1>
+                <h1 class="text-3xl font-semibold">No lessons</h1>
             </div>
         </div>
 
@@ -32,7 +33,7 @@
         <div class="overflow-x-clip">
             <table class="table table-zebra-zebra">
                 <thead>
-                <tr class="bg-gray-200">
+                <tr class="bg-purple-500 text-gray-50 text-xl">
                     <th>Title</th>
                     <th>Date</th>
                     <th class="hidden md:block">Description</th>
@@ -42,6 +43,7 @@
                 </thead>
 
                 @foreach($lessons as $lesson)
+
                     <tr class="items-center">
                         <td>{{ $lesson->title }}</td>
 
@@ -75,17 +77,6 @@
                                         </a>
                                     </div>
 
-
-                                    <div data-tip="Delete {{ $lesson->title }}" class="tooltip">
-                                        <form method="POST" action="{{ route('lessons.destroy', $lesson) }}">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button class="btn btn-circle ring btn-sm ring-red-500" type="submit">
-                                                <i class="fa-solid fa-trash"></i>
-                                            </button>
-                                        </form>
-                                    </div>
-
                                     <!-- view all students enrolled in this course -->
                                     <div data-tip="View all students attending {{ $lesson->title }}" class="tooltip">
                                         <a href="{{ route('lessons.students', $lesson) }}">
@@ -112,7 +103,7 @@
         let dates = @json($lessons->pluck('date', 'id'));
 
         for (let id in dates) {
-            setInterval(function() {
+            setInterval(function () {
                 let now = new Date().getTime();
                 var targetDate = new Date(dates[id]);
                 var distance = targetDate - now;
