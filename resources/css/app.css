@@ -81,5 +81,5 @@
 }
 
 .side {
-    @apply duration-200 flex gap-2 items-center hover:bg-blue-700 hover:text-white p-2 rounded w-full bg-gray-200;
+    @apply duration-200 flex gap-2 items-center hover:bg-blue-700 hover:text-gray-50 p-2 rounded w-full bg-base-200;
 }
