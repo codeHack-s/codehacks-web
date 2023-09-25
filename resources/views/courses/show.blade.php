@@ -9,8 +9,8 @@
             </div>
             <div class="mt-4 flex flex-col gap-2 md:mt-0">
 
-                <h2 class="text-2xl font-semibold text-gray-900">{{ $course->title }}</h2>
-                <p class="mt-2 text-gray-600">{{ $course->description }}</p>
+                <h2 class="text-2xl font-semibold">{{ $course->title }}</h2>
+                <p class="mt-2">{{ $course->description }}</p>
                 @if (!Auth::user()->courses->contains($course->id))
                     <form class="my-2 md:my-3" method="POST" action="{{ route('courses.enroll', $course) }}">
                         @csrf
@@ -42,13 +42,13 @@
 
                         <div class="avatar">
                             <div class="w-24 mask mask-hexagon">
-                                <img src="{{ $course->image_url }}" alt="{{ $course->title }}" />
+                                <img src="{{ $lesson->svg }}" alt="{{ $course->title }}" />
                             </div>
                         </div>
 
                         <div>
-                            <h2 class="text-2xl font-semibold text-gray-900">{{ $lesson->title }}</h2>
-                            <p class="mt-1 text-gray-600">{{ $lesson->description }}</p>
+                            <h2 class="text-2xl font-semibold">{{ $lesson->title }}</h2>
+                            <p class="mt-1">{{ $lesson->description }}</p>
                         </div>
 
                     </div>
