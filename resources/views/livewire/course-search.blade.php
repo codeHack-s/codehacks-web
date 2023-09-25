@@ -70,20 +70,9 @@
                                 <div data-tip="Edit {{ $course->title }}" class="tooltip">
                                     <a href="{{ route('courses.edit', $course) }}">
                                         <button class="btn btn-circle ring btn-sm">
-                                            <i class="fa-solid fa-edit"></i>
+                                            <i class="fa-solid fa-square-pen"></i>
                                         </button>
                                     </a>
-                                </div>
-
-
-                                <div data-tip="Delete {{ $course->title }}" class="tooltip">
-                                    <form method="POST" action="{{ route('courses.destroy', $course) }}">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button class="btn btn-circle ring btn-sm ring-red-500" type="submit">
-                                            <i class="fa-solid fa-trash"></i>
-                                        </button>
-                                    </form>
                                 </div>
 
                                 <!-- view all students enrolled in this course -->
