@@ -2,7 +2,7 @@
 
     @include('session.alerts')
 
-    <section class="bg-gray-100  px-2 sm:px-6 py-2 sm:py-8">
+    <section class="px-2 sm:px-6 py-2 sm:py-8">
         <div class="max-w-4xl mx-auto md:flex">
             <div class="md:flex-shrink-0 md:mr-6">
                 <img class="rounded-lg md:w-56" src="{{ $course->image_url }}" alt="{{ $course->title }}">
@@ -45,7 +45,7 @@
                                 <img src="{{ $course->image_url }}" alt="{{ $course->title }}" />
                             </div>
                         </div>
-                        
+
                         <div>
                             <h2 class="text-2xl font-semibold text-gray-900">{{ $lesson->title }}</h2>
                             <p class="mt-1 text-gray-600">{{ $lesson->description }}</p>
