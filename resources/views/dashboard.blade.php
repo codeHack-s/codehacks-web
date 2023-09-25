@@ -1,7 +1,7 @@
 <x-app-layout>
 
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class="font-semibold text-xl leading-tight">
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
@@ -9,7 +9,7 @@
     <section class="flex w-full">
         <div class="w-full sm:px-6 lg:px-8">
 
-            <div class="p-3 sm:p-5 text-gray-900 ">
+            <div class="p-3 sm:p-5 ">
 
                 <!-- Display greeting according to time of day -->
                 <div class="mb-4">
@@ -28,7 +28,7 @@
                     </div>
 
                     <div class="mb-4 w-full flex flex-wrap gap-4">
-                        <div class="card w-full sm:w-5/12 p-0 rounded bg-base-100 shadow">
+                        <div class="card w-full sm:w-5/12 p-0 rounded shadow shadow-gray-400">
                             <div class="card-body m-[-10px]">
                                 <h2 class="card-title">
                                     <!-- User Package -->
@@ -50,7 +50,7 @@
                         </div>
 
                         <!-- Display User Activity -->
-                        <div class="card w-full sm:w-5/12 p-0 rounded bg-base-100 shadow">
+                        <div class="card w-full sm:w-5/12 p-0 rounded shadow shadow-gray-400">
                             <div class="card-body m-[-10px]">
                                 <h2 class="card-title">Activity</h2>
                                 <p class="w-full">Online session time
@@ -68,7 +68,7 @@
                         @php
                             $nextLesson = Auth::user()->nextLesson();
                         @endphp
-                        <div class="card w-full sm:w-5/12 p-0 rounded bg-base-100 shadow">
+                        <div class="card w-full sm:w-5/12 p-0 rounded bg-base-100 shadow shadow-gray-400">
                             <div class="card-body m-[-10px]">
                                 <h2 class="card-title">Meeting</h2>
                                 <p>Next lesson in
@@ -130,7 +130,7 @@
 
                         <!-- Display Registered Courses -->
 
-                        <div class="card w-full sm:w-5/12 p-0 rounded bg-base-100 shadow">
+                        <div class="card w-full sm:w-5/12 p-0 rounded bg-base-100 shadow shadow-gray-400">
                             <div class="card-body m-[-10px]">
                                 <h2 class="card-title">Registered Courses</h2>
                                 <p>You have
