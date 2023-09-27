@@ -18,17 +18,21 @@ class CheckPayment
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $courseId = $request->route('course')->id; // Assuming the route parameter for the course is 'course'
+        $course = $request->route('course'); // Assuming the route parameter for the course is 'course'
         $userId = $request->user()->id;
 
-        // Check if a valid payment exists for the given course and user
-        $paymentExists = Payment::where('user_id', $userId)
-            ->where('course_id', $courseId)
-            ->exists();
+        $payment = Payment::where('user_id', $userId)
+            ->where('course_id', $course->id)
+            ->first();
 
-        if (!$paymentExists) {
-            return redirect()->route('courses.show', $courseId)
-                ->with('error', 'Payment required to access this course.');
+        if (!$payment) {
+            return redirect()->route('courses.show', $course->id)
+                ->with('error', 'Payment required');
+        }
+
+        if ($payment->amount !== $course->price){
+            return redirect()->route('courses.show', $course->id)
+                ->with('error', 'Amount mismatch for this course');
         }
 
         return $next($request);

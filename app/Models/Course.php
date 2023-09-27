@@ -12,16 +12,15 @@ class Course extends Model
 {
     use HasFactory;
 
-    /*
-     * Fields: id, title, description, created_by(User's id), updated_by(User's id), online(boolean), created_at, updated_at*/
-    protected $fillable = [
+     protected $fillable = [
         'user_id',
         'title',
         'description',
         'online',
         'created_by',
         'updated_by',
-        'image_url'
+        'image_url',
+        'price'
     ];
 
     public function user(): BelongsTo
