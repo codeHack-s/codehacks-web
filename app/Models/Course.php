@@ -4,6 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Course extends Model
 {
@@ -21,19 +24,31 @@ class Course extends Model
         'image_url'
     ];
 
-    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    public function lessons(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function lessons(): HasMany
     {
         return $this->hasMany(Lesson::class);
     }
 
-    public function users(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    // Relationship to Users (both students and tutors)
+    public function users(): BelongsToMany
     {
-        return $this->belongsToMany(User::class, 'enrollments');
+        return $this->belongsToMany(User::class)->withPivot('role');
+    }
+
+    // Relationship to Payments
+    public function payments(): HasMany
+    {
+        return $this->hasMany(Payment::class);
+    }
+
+    public function interviews(): HasMany
+    {
+        return $this->hasMany(Interview::class);
     }
 
 }

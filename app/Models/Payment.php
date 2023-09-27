@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Payment extends Model
 {
@@ -21,9 +22,15 @@ Fields: id, user_id, amount, payment_for(subscription/course), payment_status, c
         'payment_status'
     ];
 
-    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+    // Relationship to Course
+    public function course(): BelongsTo
+    {
+        return $this->belongsTo(Course::class);
     }
 
 }

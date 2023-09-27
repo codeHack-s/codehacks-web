@@ -37,4 +37,5 @@ class Interview extends Model
     {
         return $this->belongsTo(User::class);
     }
+
 }

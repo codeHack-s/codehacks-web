@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Lesson extends Model
 {
@@ -45,14 +46,15 @@ class Lesson extends Model
         return $randomImages[array_rand($randomImages)];
     }
 
-    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    public function course(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    public function course(): BelongsTo
     {
         return $this->belongsTo(Course::class);
     }
+
 
 }
