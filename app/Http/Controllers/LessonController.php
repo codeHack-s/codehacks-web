@@ -7,6 +7,7 @@ use App\Models\Course;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\View\View;
 
 class LessonController extends Controller
 {
@@ -75,11 +76,9 @@ class LessonController extends Controller
         return redirect()->route('lessons.index')->with('success', 'Lesson deleted successfully');
     }
 
-    public function students(Lesson $lesson): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
+    public function students(Lesson $lesson):View
     {
-        // get the course under which this lesson is
-        $course = $lesson->course;
-        $students = $course->users()->get();
+        $students = $lesson->students()->get();
         return view('lessons.students', compact('lesson', 'students'));
     }
 

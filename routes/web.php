@@ -7,6 +7,7 @@ use App\Http\Controllers\PricingController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ThemeController;
 use App\Http\Controllers\AdminController;
+use App\Http\Livewire\Usercourses;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -43,7 +44,7 @@ Route::middleware(['auth','verified', 'user.type:campus'])->group(function () {
 
     //define index route
     Route::get('/courses', [CourseController::class, 'index'])->name('courses.index');
-    Route::post('courses/{course}/enroll', [CourseController::class, 'enroll'])->name('courses.enroll');
+    Route::post('courses/{course}/enroll', [CourseController::class, 'enroll'])->name('courses.enroll')->middleware('check.payment');
 
     Route::post('lessons/{lesson}/attend', [LessonController::class, 'attend'])->name('lesson.attend');
     //un-attend
@@ -54,7 +55,7 @@ Route::middleware(['auth','verified', 'user.type:campus'])->group(function () {
     Route::get('courses/{course}/students', [CourseController::class, 'students'])->name('courses.students');
 
     //all courses for a user
-    Route::get('courses/user/{user}', \App\Http\Livewire\Usercourses::class)->name('courses.user');
+    Route::get('courses/user/{user}', Usercourses::class)->name('courses.user');
 
     //lessons
     Route::resource('lessons', LessonController::class);

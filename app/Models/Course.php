@@ -51,4 +51,10 @@ class Course extends Model
         return $this->hasMany(Interview::class);
     }
 
+    public function enrolledUsers(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class, 'enrollments')->withTimestamps();
+    }
+
+
 }

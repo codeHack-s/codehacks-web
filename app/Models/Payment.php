@@ -9,14 +9,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Payment extends Model
 {
     use HasFactory;
-
-    /*
-     * Payment Model:
-
-Fields: id, user_id, amount, payment_for(subscription/course), payment_status, created_at, updated_at
-    */
     protected $fillable = [
         'user_id',
+        'course_id',
         'amount',
         'payment_for',
         'payment_status'
