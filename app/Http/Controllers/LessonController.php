@@ -16,9 +16,15 @@ class LessonController extends Controller
         $this->middleware('can:manage')->only(['create', 'edit', 'store', 'update', 'destroy']);
     }
 
-    public function index(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
+    public function index(): View
     {
-        $lessons = Lesson::all();
+        $userType = Auth::user()->user_type;
+
+        // Get lessons belonging to courses that match the user type.
+        $lessons = Lesson::whereHas('course', function ($query) use ($userType) {
+            $query->where('for', $userType);
+        })->get();
+
         return view('lessons.index', compact('lessons'));
     }
 

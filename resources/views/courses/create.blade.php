@@ -10,11 +10,21 @@
             <x-text-input type="text" id="title" name="title" :value="old('title')" required />
 
             <label for="description">Description:</label>
-            <textarea class="textarea-info textarea" id="description" name="description" :value="old('description')" required></textarea>
+            <textarea class="textarea-info textarea" id="description" name="description" required>{{ old('description') }}</textarea>
+
+            <label for="price">Price:</label>
+            <x-text-input type="number" id="price" name="price" :value="old('price')" required />
+
+            <label for="for">Category:</label>
+            <select class="select select-bordered w-full max-w-xs" id="for" name="for" required>
+                <option disabled="disabled" selected="selected">Select a category</option>
+                <option value="campus">Campus</option>
+                <option value="innovate">Innovate</option>
+            </select>
 
             <section class="online-input flex gap-2 items-center">
                 <label for="online">Check if online:</label>
-                <input type="checkbox" id="online" name="online" :value="old('online')" >
+                <input type="checkbox" id="online" name="online" value="{{ old('online')}}" />
             </section>
 
             <label for="image">Course Image:</label>

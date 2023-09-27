@@ -20,7 +20,9 @@ class Course extends Model
         'created_by',
         'updated_by',
         'image_url',
-        'price'
+        'price',
+        'status',
+        'for',
     ];
 
     public function user(): BelongsTo
