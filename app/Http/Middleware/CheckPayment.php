@@ -25,6 +25,13 @@ class CheckPayment
             ->where('course_id', $course->id)
             ->first();
 
+        //if user_type is innovate allow
+        $should_bypass = $request->user()->user_type === 'campus';
+
+        if ($should_bypass) {
+            return $next($request);
+        }
+
         if (!$payment) {
             return redirect()->route('courses.show', $course->id)
                 ->with('error', 'Payment required');
