@@ -22,7 +22,6 @@
                             if ($hour >= 5 && $hour <= 11) {echo "Good Morning";} else if ($hour >= 12 && $hour <= 18) { echo "Good Afternoon";} else if ($hour >= 19 || $hour <= 4) {echo "Good Evening";}
                         @endphp
                         {{ Auth::user()->first_name  }} {{ Auth::user()->last_name  }}
-                        {{ Auth::user()->user_type }}
                     </p>
 
                     <!-- Display User Balance -->

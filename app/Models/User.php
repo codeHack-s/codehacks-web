@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -59,6 +60,42 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->belongsToMany(Course::class, 'enrollments');
     }
+
+    public function innovate_courses(): BelongsToMany
+    {
+        return $this->belongsToMany(Course::class)->withPivot('role');
+    }
+
+    public function enrolledCourses(): BelongsToMany
+    {
+        return $this->belongsToMany(Course::class, 'enrollments')->withTimestamps();
+    }
+
+
+    // Relationship to Payments
+    public function innovate_payments(): HasMany
+    {
+        return $this->hasMany(Payment::class);
+    }
+
+    // Relationship to Ratings given by this user
+    public function givenRatings(): HasMany
+    {
+        return $this->hasMany(Rating::class);
+    }
+
+    // Relationship to Ratings received by this user (as a tutor)
+    public function receivedRatings(): HasMany
+    {
+        return $this->hasMany(Rating::class, 'tutor_id');
+    }
+
+    // Relationship to Interviews (as a tutor)
+    public function interviews(): HasMany
+    {
+        return $this->hasMany(Interview::class, 'tutor_id');
+    }
+
 
     public function lessons(): BelongsToMany
     {

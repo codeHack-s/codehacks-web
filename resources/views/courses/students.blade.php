@@ -14,7 +14,7 @@
             </tr>
             </thead>
 
-            @foreach($course->users as $user)
+            @foreach($course->enrolledUsers as $user)
                 <tr>
                     <td>{{ $user->first_name }} {{ $user->last_name }}</td>
                     <td>{{ $user->email }}</td>
