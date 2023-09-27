@@ -60,6 +60,12 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->belongsToMany(Course::class, 'enrollments');
     }
 
+    public function innovate_courses(): BelongsToMany
+    {
+        return $this->belongsToMany(Course::class)->withPivot('role');
+    }
+
+
     public function lessons(): BelongsToMany
     {
         return $this->belongsToMany(Lesson::class, 'attendance');
