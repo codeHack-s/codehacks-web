@@ -21,17 +21,27 @@ class Lessons extends Component
     {
         $userType = Auth::user()->user_type;
 
-        return view('livewire.lessons', [
-            'lessons' => Lesson::whereHas('course', function ($query) use ($userType) {
-                $query->where('for', $userType);
-            })
-                ->where(function ($query) {
-                    $query->where('title', 'like', '%' . $this->search . '%')
-                        ->orWhere('description', 'like', '%' . $this->search . '%')
-                        ->orWhere('venue', 'like', '%' . $this->search . '%')
-                        ->orWhere('date', 'like', '%' . $this->search . '%');
+        if(Auth::user()->can('manage')){
+            return view('livewire.lessons', [
+                'lessons' => Lesson::where('title', 'like', '%' . $this->search . '%')
+                    ->orWhere('description', 'like', '%' . $this->search . '%')
+                    ->orWhere('venue', 'like', '%' . $this->search . '%')
+                    ->orWhere('date', 'like', '%' . $this->search . '%')
+                    ->paginate(10)
+            ]);
+        }else{
+            return view('livewire.lessons', [
+                'lessons' => Lesson::whereHas('course', function ($query) use ($userType) {
+                    $query->where('for', $userType);
                 })
-                ->paginate(10)
-        ]);
+                    ->where(function ($query) {
+                        $query->where('title', 'like', '%' . $this->search . '%')
+                            ->orWhere('description', 'like', '%' . $this->search . '%')
+                            ->orWhere('venue', 'like', '%' . $this->search . '%')
+                            ->orWhere('date', 'like', '%' . $this->search . '%');
+                    })
+                    ->paginate(10)
+            ]);
+        }
     }
 }

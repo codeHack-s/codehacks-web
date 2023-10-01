@@ -17,8 +17,13 @@ class CourseController extends Controller
      */
     public function index(): View
     {
-        $userType = Auth::user()->user_type;
-        $courses = Course::where('for', $userType)->get();
+        //if the user can:manage
+        if(Auth::user()->can('manage')){
+            $courses = Course::all();
+        }else{
+            $userType = Auth::user()->user_type;
+            $courses = Course::where('for', $userType)->get();
+        }
 
         return view('courses.index', compact('courses'));
     }
