@@ -29,7 +29,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified', 'user.type:campus'])->name('dashboard');
 
-Route::middleware(['auth','verified', 'user.type:campus'])->group(function () {
+Route::middleware(['auth','verified'])->group(function () {
 
     //breeze routes
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

@@ -8,15 +8,23 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\View\View;
 
 class CourseController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
+    public function index(): View
     {
-        $courses = Course::all();
+        //if the user can:manage
+        if(Auth::user()->can('manage')){
+            $courses = Course::all();
+        }else{
+            $userType = Auth::user()->user_type;
+            $courses = Course::where('for', $userType)->get();
+        }
+
         return view('courses.index', compact('courses'));
     }
 
@@ -42,6 +50,7 @@ class CourseController extends Controller
             'title' => 'required',
             'description' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'for' => 'required',
         ]);
 
         $user_id = Auth::user()->id;
@@ -56,6 +65,8 @@ class CourseController extends Controller
             'title' => $request->title,
             'description' => $request->description,
             'online' => $online,
+            'for' => $request->for,
+            'status' => 'pending',
             'image_url' => '/images/'.$imageName,
             'created_by' => Auth::user()->id,
             'updated_by' => Auth::user()->id,
