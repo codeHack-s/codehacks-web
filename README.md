@@ -25,30 +25,43 @@ You will need the following tools:
 
 - cd codeHacks
 ### Install the dependencies
-- composer install
-- npm install
+```sh
+composer install
+```
+```sh
+npm install
+```
 ### Create a copy of your .env file
-
-- cp .env.example .env
+```sh
+cp .env.example .env
+```
 ### Generate an app encryption key
-
-- php artisan key:generate
+```sh
+php artisan key:generate
+```
 ### Create an empty database and set your database credentials in your .env file
 
-- DB_CONNECTION=mysql
-- DB_HOST=127.0.0.1
-- DB_PORT=3306
-- DB_DATABASE=your_database
-- DB_USERNAME=your_username
-- DB_PASSWORD=your_password
+```sh
+DB_CONNECTION=mysql
+DB_HOST=
+DB_PORT=
+DB_DATABASE=
+DB_USERNAME=
+DB_PASSWORD=
+```
+
 ### Migrate the database
 
-- php artisan migrate
-### Compile your assets
-- npm run dev
-### Run the application
+```sh
+php artisan migrate
+```
+### Run the application and compile the assets
+    
+```sh
+npm run serve
+```
 
-- php artisan serve
+
 ### Usage
 You can now access the server at http://localhost:8000
 
