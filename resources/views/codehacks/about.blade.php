@@ -47,7 +47,7 @@
             </dd>
         </dl>
         <div class="mt-4 col-start-1 row-start-3 self-center sm:mt-0 sm:col-start-2 sm:row-start-2 sm:row-span-2 lg:mt-6 lg:col-start-1 lg:row-start-3 lg:row-end-4">
-            <a href="{{ route('register') }}" type="button" class="btn btn-warning font-semibold btn-outline ring ring-orange-700 rounded-full text-white leading-6 py-2 px-3">
+            <a href="/{{ route('register-default') }}" type="button" class="btn btn-warning font-semibold btn-outline ring ring-orange-700 rounded-full text-white leading-6 py-2 px-3">
                 JOIN CODEHACKS&nbsp; <i class="fa-solid fa-shield"></i>
             </a>
         </div>
