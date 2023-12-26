@@ -20,7 +20,7 @@
     <meta name="twitter:title" content="codeHacks™️">
     <meta name="twitter:description" content="
     CodeHacks is a community of developers and tech enthusiasts learning to code, improving their skills, and building software projects."/>
-    <meta name="twitter:image" content="{{asset('storage/images/logo.png')}}">
+    <meta name="twitter:image" content="{{asset('logo.png')}}">
 
     <link rel="icon" href="{{ asset('storage/images/fav.png') }}" type="image/png" sizes="16x16">
     <meta aria-description="

@@ -10,8 +10,9 @@
         <div data-tip="For Chuka Uni students"  class="tooltip tooltip-bottom">
             <a class="btn btn-outline btn-primary ring normal-case" href="{{ route('register', ['type' => 'campus']) }}">Codehacks Campus</a>
         </div>
-        <div data-tip="Online Learning"  class="tooltip tooltip-bottom">
-            <a class="btn btn-outline btn-warning ring normal-case" href="{{ route('register', ['type' => 'innovate']) }}">Codehacks Innovate</a>
+        <div data-tip="Not supported yet"  class="tooltip tooltip-bottom">
+{{--            <a class="btn btn-outline disabled btn-warning ring normal-case" href="{{ route('register', ['type' => 'innovate']) }}">Codehacks Innovate</a>--}}
+            <a class="btn btn-outline disabled btn-warning ring normal-case" href="#">Codehacks Innovate</a>
         </div>
 
     </section>

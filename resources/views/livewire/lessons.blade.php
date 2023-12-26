@@ -24,7 +24,7 @@
 
         <div class="flex justify-center items-center">
             <div class="flex flex-col items-center">
-                <img src="{{ asset('storage/images/logo.png') }}" class="w-72 h-72" alt="No courses found">
+                <img src="{{ asset('logo.png') }}" class="w-72 h-72" alt="No courses found">
                 <h1 class="text-3xl font-semibold">No lessons</h1>
             </div>
         </div>
