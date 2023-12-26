@@ -82,9 +82,9 @@ Route::middleware(['auth','verified'])->group(function () {
     })->name('response');
 });
 
-Route::get('about', function () {
+Route::get('/about', function () {
     return view('codehacks.about');
-})->name('about');
+})->name('about')->middleware('user.type:campus');
 
 
 //admin routes
