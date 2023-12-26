@@ -50,10 +50,9 @@
         }
 
         .swiper-slide {
-            background: url('{{ asset('storage/images/codehacks.svg ') }}');
+            background: url('{{ asset('codehacks.svg') }}');
             background-size: cover;
             background-position: center;
-
         }
     </style>
 </head>
@@ -73,7 +72,7 @@
     </div>
     <div class="navbar-center">
         <a href="{{ route('dashboard') }}" >
-            <img src="https://uxaidev.xyz/images/codew.png" alt="Codehacks" class="w-28 sm:w-32 mix-blend-screen">
+            <img src="codew.png" alt="Codehacks" class="w-28 sm:w-32 mix-blend-screen">
         </a>
     </div>
 
