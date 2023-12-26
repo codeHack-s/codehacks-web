@@ -1,3 +1,3 @@
 <div class="object-cover">
-    <img  {{ $attributes }} src="{{asset('storage/images/logo.png')}}">
+    <img  {{ $attributes }} src="{{asset('logo.png')}}">
 </div>
