@@ -84,7 +84,7 @@ Route::middleware(['auth','verified'])->group(function () {
 
 Route::get('/about', function () {
     return view('codehacks.about');
-})->name('about')->middleware('user.type:campus');
+})->name('about');
 
 
 //admin routes
