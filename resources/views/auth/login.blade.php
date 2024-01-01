@@ -5,12 +5,6 @@
     <form method="POST" action="{{ route('login') }}">
         @csrf
 
-        <!-- Welcome -->
-        <div class="flex items-center flex-col my-4 sm:my-6 md:my-8 justify-center">
-            <h1 class="sm:text-3xl text-2xl font-bold text-gray-900">Welcome Back!</h1>
-            <p class="text-xs italic text-gray-400 ml-2">Please fill in your credentials to proceed.</p>
-        </div>
-
         <!-- Email Address -->
         <div>
             <x-input-label for="email" :value="__('Email')" />
@@ -33,28 +27,21 @@
         <!-- Remember Me -->
         <div class="block mt-4">
             <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800" name="remember">
-                <span class="ml-2 text-sm text-gray-600 dark:text-gray-400">{{ __('Remember me') }}</span>
+                <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
+                <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
             </label>
         </div>
 
-        <div class="flex items-center justify-between mt-4">
-            <!-- Register -->
-            <a class="underline text-xs text-gray-600 hover:text-blue-500" href="{{ route('register-default') }}">
-                {{ __('New Here ?') }}
-            </a>
+        <div class="flex items-center justify-end mt-4">
+            @if (Route::has('password.request'))
+                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
+                    {{ __('Forgot your password?') }}
+                </a>
+            @endif
 
-            <div>
-                @if (Route::has('password.request'))
-                    <a class="underline text-xs text-gray-600 hover:text-blue-500 rounded-md" href="{{ route('password.request') }}">
-                        {{ __('Forgot password?') }}
-                    </a>
-                @endif
-
-                <x-primary-button class="ml-3">
-                    {{ __('Log in') }}
-                </x-primary-button>
-            </div>
+            <x-primary-button class="ms-3">
+                {{ __('Log in') }}
+            </x-primary-button>
         </div>
     </form>
 </x-guest-layout>
