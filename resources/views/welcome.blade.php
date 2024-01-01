@@ -93,8 +93,13 @@
     <div class="swiper-slide w-full">
         {{--<img height="screen" src="/storage/dark2.jpg" class="w-full min-h-64 object-cover" alt="image description">--}}
         <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
-            <h1 class="text-1xl sm:text-2xl font-semibold text-white">Welcome to CodeHacks™️</h1>
-            <p class="text-white mt-2">WaitList V 0.0.1</p>
+            <h1 class="text-1xl sm:text-2xl font-semibold text-white">Welcome to the last CodeHack️</h1>
+            <p class="text-xs text-gray-500 mt-2">
+                CodeHacks is a <a class="text-blue-600 text-sm" target="_blank" href="https://tomsteve.me">
+                    kenTom™️
+                </a>
+                company
+            </p>
             <div class="space-x-4 flex items-center justify-center mt-4">
                 <!-- Register and login buttons with icons -->
                 <a href="{{ route('register') }}" class="">
@@ -107,6 +112,21 @@
                     <i class="fas fa-sign-in-alt mr-1"></i>
                     Login
                 </a>
+            </div>
+
+            <div class="absolute flex gap-4 -bottom-48 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full items-center justify-center text-center">
+                <div class="w-12">
+                    <img src="{{asset("storage/chuka.png")}}" alt="Chuka" class="w-28 sm:w-32 mix-blend-screen">
+                </div>
+
+                <div class="w-12">
+                    <img src="{{asset("storage/code.png")}}" alt="Codehacks" class=" mix-blend-screen w-full object-cover">
+                </div>
+
+                <div class="w-12">
+                    <img src="{{asset("storage/code.png")}}" alt="Codehacks" class=" mix-blend-screen w-full object-cover">
+                </div>
+
             </div>
         </div>
     </div>
