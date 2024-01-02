@@ -16,7 +16,8 @@ return new class extends Migration
             $table->foreignId('lesson_id')->constrained();
             $table->string('type');
             $table->string('url');
-            $table->string('title');
+            $table->string('name');
+            $table->text('description');
             $table->timestamps();
         });
     }

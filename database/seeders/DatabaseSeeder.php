@@ -12,11 +12,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        // WithoutModelEvents::disable();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        $this->call([
+            UserSeeder::class,
+            CourseSeeder::class,
+            ResourceSeeder::class,
+            CourseRegistrationSeeder::class,
+            LessonSeeder::class,
+        ]);
+
+        // WithoutModelEvents::enable();
     }
 }
