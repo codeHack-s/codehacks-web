@@ -91,7 +91,6 @@
 <section class=overflow-x-hidden">
 
     <div class="swiper-slide w-full">
-        {{--<img height="screen" src="/storage/dark2.jpg" class="w-full min-h-64 object-cover" alt="image description">--}}
         <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
             <h1 class="text-1xl sm:text-2xl font-semibold text-white">Welcome to the last CodeHack️</h1>
             <p class="text-xs text-gray-500 mt-2">
@@ -101,7 +100,6 @@
                 company
             </p>
             <div class="space-x-4 flex items-center justify-center mt-4">
-                <!-- Register and login buttons with icons -->
                 <a href="{{ route('register') }}" class="">
                     <button class="btn normal-case w-[120px] btn-warning backdrop-blur-md ring-offset-2 rounded-full btn-outline ring-2">
                         <i class="fas fa-user-plus mr-1"></i>
@@ -115,16 +113,20 @@
             </div>
 
             <div class="absolute flex gap-4 -bottom-48 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full items-center justify-center text-center">
-                <div class="w-12">
+                <div data-tip="Chuka University" class="tooltip w-12">
                     <img src="{{asset("storage/chuka.png")}}" alt="Chuka" class="w-28 sm:w-32 mix-blend-screen">
                 </div>
 
-                <div class="w-12">
+                <div data-tip="CodeHacks" class="w-12 tooltip">
                     <img src="{{asset("storage/code.png")}}" alt="Codehacks" class=" mix-blend-screen w-full object-cover">
                 </div>
 
-                <div class="w-12">
-                    <img src="{{asset("storage/code.png")}}" alt="Codehacks" class=" mix-blend-screen w-full object-cover">
+                <div data-tip="FutureSpace" class="w-24 tooltip">
+                    <img src="{{asset("storage/fs.png")}}" alt="Codehacks" class=" mix-blend-screen w-full object-cover">
+                </div>
+
+                <div data-tip="KenTom" class="tooltip w-12">
+                    <img src="{{asset("https://tomsteve.me/fav.png")}}" alt="Codehacks" class=" mix-blend-screen w-full object-cover">
                 </div>
 
             </div>
@@ -149,7 +151,6 @@
                 </div>
             </div>
 
-            <!-- Chuka University logo -->
             <div class="flex justify-center my-6">
                 <img src="{{ asset('storage/chuka.png') }}" alt="Chuka University Logo" class="w-24 h-24">
             </div>
@@ -175,8 +176,7 @@
                     <p class="text-lg leading-6 mb-6">We're currently experiencing some technical issues with our database. We're working on it and we'll be back up and running soon. We apologize for any inconvenience caused.
                         <br>
                         <br>
-                        <strong>Update:</strong> We've managed to recover all the data.
-                        All the data will be discarded due to security reasons.
+                        <strong>Update:</strong>All the data will be discarded due to security reasons.
                         This is because we are moving to a new level of development and we are going to be a closed source company.
                     </p>
                 </div>
