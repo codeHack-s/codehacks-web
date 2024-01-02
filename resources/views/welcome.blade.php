@@ -4,27 +4,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Tailwind CSS -->
-    <title>codeHacks™️</title>
+    <title>CodeHacks™️</title>
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
     <meta property="og:title" content="codeHacks™️">
-    <meta property="og:description" content="
-    CodeHacks is a community of developers and tech enthusiasts learning to code, improving their skills, and building software projects.
-    ">
-    <meta property="og:image" content="{{asset('storage/logo.png')}}">
+    <meta property="og:description" content="Codehacks is a KenTom company that offers a wide range of software services online including courses">
+    <meta property="og:image" content="{{asset('storage/codehacks.png')}}">
     <meta property="og:url" content="https://codehacks.co.ke/">
 
     <meta name="twitter:card" content="{{asset('storage/logo.png')}}">
     <meta name="twitter:site" content="@code_hacks254">
     <meta name="twitter:title" content="codeHacks™️">
-    <meta name="twitter:description" content="
-    CodeHacks is a community of developers and tech enthusiasts learning to code, improving their skills, and building software projects."/>
+    <meta name="twitter:description" content="Codehacks is a KenTom company that offers a wide range of software services online including courses"/>
     <meta name="twitter:image" content="{{asset('logo.png')}}">
 
-    <link rel="icon" href="{{ asset('storage/storage/fav.png') }}" type="image/png" sizes="16x16">
-    <meta aria-description="
-    CodeHacks is a community of developers and tech enthusiasts learning to code, improving their skills, and building software projects.
+    <link rel="icon" href="{{ asset('storage/codehacks.png') }}" type="image/png" sizes="16x16">
+    <meta aria-description="Codehacks is a KenTom company that offers a wide range of software services online including courses
     ">
 
     <!--details for search engines-->
@@ -38,7 +34,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet"/>
-
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <style>
@@ -142,7 +138,11 @@
                     <img src="{{asset("https://tomsteve.me/fav.png")}}" alt="Codehacks"
                          class=" mix-blend-screen w-full object-cover">
                 </div>
-            </div>
+
+                <div data-tip="KenTom" class="tooltip w-24">
+                    <img src="{{asset("https://tomsteve.me/img/clients/client-6.png")}}" alt="kenTom"
+                         class=" mix-blend-screen w-full object-cover">
+                </div>            </div>
 
         </div>
     </div>
