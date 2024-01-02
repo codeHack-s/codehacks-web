@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('resources', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('lesson_id')->constrained();
+            $table->string('type');
+            $table->string('url');
+            $table->string('title');
             $table->timestamps();
         });
     }
