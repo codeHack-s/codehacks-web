@@ -10,16 +10,16 @@
     <meta name="language" content="English">
     <meta property="og:title" content="codeHacks™️">
     <meta property="og:description" content="Codehacks is a KenTom company that offers a wide range of software services online including courses">
-    <meta property="og:image" content="{{asset('storage/codehacks.png')}}">
+    <meta property="og:image" content="{{asset('storage/code.png')}}">
     <meta property="og:url" content="https://codehacks.co.ke/">
 
-    <meta name="twitter:card" content="{{asset('storage/logo.png')}}">
+    <meta name="twitter:card" content="{{asset('storage/code.png')}}">
     <meta name="twitter:site" content="@code_hacks254">
     <meta name="twitter:title" content="codeHacks™️">
     <meta name="twitter:description" content="Codehacks is a KenTom company that offers a wide range of software services online including courses"/>
-    <meta name="twitter:image" content="{{asset('logo.png')}}">
+    <meta name="twitter:image" content="{{asset('storage/code.png')}}">
 
-    <link rel="icon" href="{{ asset('storage/codehacks.png') }}" type="image/png" sizes="16x16">
+    <link rel="icon" href="{{ asset('storage/code.png') }}" type="image/png" sizes="16x16">
     <meta aria-description="Codehacks is a KenTom company that offers a wide range of software services online including courses
     ">
 

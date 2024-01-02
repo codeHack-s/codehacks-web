@@ -10,16 +10,16 @@
     <meta name="language" content="English">
     <meta property="og:title" content="codeHacks™️">
     <meta property="og:description" content="Codehacks is a KenTom company that offers a wide range of software services online including courses">
-    <meta property="og:image" content="{{asset('storage/codehacks.png')}}">
+    <meta property="og:image" content="{{asset('storage/code.png')}}">
     <meta property="og:url" content="https://codehacks.co.ke/">
 
-    <meta name="twitter:card" content="{{asset('storage/logo.png')}}">
+    <meta name="twitter:card" content="{{asset('storage/code.png')}}">
     <meta name="twitter:site" content="@code_hacks254">
     <meta name="twitter:title" content="codeHacks™️">
     <meta name="twitter:description" content="Codehacks is a KenTom company that offers a wide range of software services online including courses"/>
-    <meta name="twitter:image" content="{{asset('logo.png')}}">
+    <meta name="twitter:image" content="{{asset('storage/code.png')}}">
 
-    <link rel="icon" href="{{ asset('storage/codehacks.png') }}" type="image/png" sizes="16x16">
+    <link rel="icon" href="{{ asset('storage/code.png') }}" type="image/png" sizes="16x16">
     <meta aria-description="Codehacks is a KenTom company that offers a wide range of software services online including courses
     ">
 
@@ -36,6 +36,7 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet"/>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
     </head>
     <body class="font-sans text-gray-900 antialiased">
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
