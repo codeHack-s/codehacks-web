@@ -9,14 +9,16 @@
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
     <meta property="og:title" content="codeHacks™️">
-    <meta property="og:description" content="Codehacks is a KenTom company that offers a wide range of software services online including courses">
+    <meta property="og:description"
+          content="Codehacks is a KenTom company that offers a wide range of software services online including courses">
     <meta property="og:image" content="{{asset('storage/code.png')}}">
     <meta property="og:url" content="https://codehacks.co.ke/">
 
     <meta name="twitter:card" content="{{asset('storage/code.png')}}">
     <meta name="twitter:site" content="@code_hacks254">
     <meta name="twitter:title" content="codeHacks™️">
-    <meta name="twitter:description" content="Codehacks is a KenTom company that offers a wide range of software services online including courses"/>
+    <meta name="twitter:description"
+          content="Codehacks is a KenTom company that offers a wide range of software services online including courses"/>
     <meta name="twitter:image" content="{{asset('storage/code.png')}}">
 
     <link rel="icon" href="{{ asset('storage/code.png') }}" type="image/png" sizes="16x16">
@@ -37,24 +39,23 @@
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-    </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
+</head>
+<body class="font-sans antialiased">
+<div class="min-h-screen">
 
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
+    @include('layouts.navigation')
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
-        </div>
-    </body>
+    <section class="flex">
+
+        @section('sidebar')
+            @include('layouts.sidebar')
+        @show
+
+        <!-- Page Content -->
+        <main>
+            {{ $slot }}
+        </main>
+    </section>
+</div>
+</body>
 </html>

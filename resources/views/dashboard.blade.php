@@ -3,9 +3,16 @@
         <div class="max-w-7xl mx-aut px-4 sm:px-6 lg:px-8">
             <div class="overflow-hidden sm:rounded-lg">
 
-                <div class="w-full sm:max-w-xs bg-white border border-gray-200 rounded-lg shadow">
+                <center>
+                    <h1 class="mt-10 mb-5 text-center text-3xl font-semibold">
+                        Upcoming Events
+                    </h1>
+                </center>
+
+                <div class="w-full hover:scale-95 transition overflow-hidden sm:max-w-xs bg-white border border-gray-200 rounded-lg shadow">
                     <a href="#">
-                        <img class="rounded-t-lg w-full object-cover" src="{{asset('storage/1693925608.jpg')}}" alt="product image" />
+                        <img class="rounded-t-lg w-full object-cover" src="{{asset('storage/1693925608.jpg')}}"
+                             alt="product image"/>
                     </a>
                     <div class="px-2 sm:px-3 md:px-4 pb-5">
 
@@ -16,14 +23,16 @@
                         </a>
 
                         <div class="flex items-center mt-2.5 mb-5">
-                            <div data-tip="not supported" class="flex tooltip items-center space-x-1 rtl:space-x-reverse">
+                            <div data-tip="not supported"
+                                 class="flex tooltip items-center space-x-1 rtl:space-x-reverse">
                                 <i class='fa-solid fa-star text-yellow-300'></i>
                                 <i class='fa-solid fa-star text-yellow-300'></i>
                                 <i class='fa-solid fa-star text-yellow-300'></i>
                                 <i class='fa-solid fa-star text-yellow-300'></i>
                                 <i class='fa-solid fa-star text-yellow-300'></i>
                             </div>
-                            <span class="bg-blue-100 hidden text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3">5.0</span>
+                            <span
+                                class="bg-blue-100 hidden text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3">5.0</span>
                         </div>
                         <div class="flex items-center justify-between">
                             <span class="text-xl font-semibold text-gray-600">
@@ -34,6 +43,12 @@
                             </a>
                         </div>
                     </div>
+
+                    <button
+                        class="w-full py-3 text-sm font-semibold text-white uppercase bg-blue-500 rounded-b-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-blue-200">
+                        Register
+                    </button>
+
                 </div>
 
             </div>

@@ -18,3 +18,7 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #f7770f;
 }
+
+.side {
+    @apply duration-200 flex gap-2 items-center hover:bg-blue-700 hover:text-gray-50 p-2 rounded w-full bg-base-200;
+}

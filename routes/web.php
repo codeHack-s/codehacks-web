@@ -28,8 +28,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/about', function () {
-    return view('about');
-})->name('about');
+Route::get('/about', function () {return view('about');})->name('about');
+
+Route::post('/set-theme', [ThemeController::class, 'setTheme'])->name('set-theme');
+Route::get('/get-theme', [ThemeController::class, 'getTheme'])->name('get-theme');
 
 require __DIR__.'/auth.php';
