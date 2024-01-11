@@ -1,5 +1,7 @@
 <x-app-layout>
     <div class="py-12">
+        @section('title', $course->title)
+        @section('description', $course->description)
         <div class="max-w-7xl mx-aut px-2 sm:px-3 lg:px-4">
             <div class="sm:rounded-lg relative">
 

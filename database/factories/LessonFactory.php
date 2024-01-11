@@ -5,6 +5,7 @@ namespace Database\Factories;
 use App\Models\Course;
 use App\Models\Lesson;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 /**
  * @extends Factory<Lesson>
@@ -26,6 +27,7 @@ class LessonFactory extends Factory
         return [
             'title' => $title,
             'content' => $this->faker->paragraph,
+            'slug' => Str::slug($title),
             'course_id' => $courses->random()->id,
             'scheduled_time' => $this->faker->dateTimeBetween('now', '+1 year'),
         ];

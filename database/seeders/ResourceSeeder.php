@@ -13,6 +13,6 @@ class ResourceSeeder extends Seeder
      */
     public function run(): void
     {
-        Resource::factory()->count(500)->create();
+        Resource::factory()->count(20)->create();
     }
 }

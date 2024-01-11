@@ -4,7 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Tailwind CSS -->
-    <title>CodeHacks™️</title>
+    <title>@yield('title', 'CodeHacks™️')</title>
+    <meta name="description" content="@yield('description', 'CodeHacks is a community of developers and tech enthusiasts learning to code, improving their skills, and building software projects.')">
+    <meta name="keywords" content="@yield('keywords', 'codeHacks, codehacks kenya, Raccoon254, Raccoon, Futurespace, code hack, code, coding, learn coding, learn to code, programming, web development, web design, software development, Laravel, freelance, freelancing, tech community, coding community, programming community, Kenya, technology, JavaScript, Java, PHP, C++, C#, Python, Adobe, VS Code, UI, backend, SSH, VPS, Linux servers, Apache, Windows installation, codehacks.co.ke')">
+    <meta name="author" content="Raccoon254">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
