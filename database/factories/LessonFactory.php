@@ -7,7 +7,7 @@ use App\Models\Lesson;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Lesson>
+ * @extends Factory<Lesson>
  */
 class LessonFactory extends Factory
 {
@@ -21,10 +21,12 @@ class LessonFactory extends Factory
     {
         $title = $this->faker->sentence;
 
+        $courses = Course::all();
+
         return [
             'title' => $title,
             'content' => $this->faker->paragraph,
-            'course_id' => Course::factory(),
+            'course_id' => $courses->random()->id,
             'scheduled_time' => $this->faker->dateTimeBetween('now', '+1 year'),
         ];
     }

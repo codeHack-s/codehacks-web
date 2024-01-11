@@ -7,7 +7,7 @@ use App\Models\Resource;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Resource>
+ * @extends Factory<Resource>
  */
 class ResourceFactory extends Factory
 {
@@ -19,8 +19,9 @@ class ResourceFactory extends Factory
      */
     public function definition(): array
     {
+            $lessons = Lesson::all();
         return [
-            'lesson_id' => Lesson::factory(),
+            'lesson_id' => $lessons->random()->id,
             'name' => $this->faker->word,
             'url' => $this->faker->url,
             'type' => $this->faker->randomElement(['video', 'audio', 'text']),
