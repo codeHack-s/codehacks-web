@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ThemeController;
 use App\Http\Controllers\PageController;
+use App\Http\Livewire\Admin;
 use App\Http\Livewire\Connect;
 use App\Http\Livewire\Courses;
 use Illuminate\Support\Facades\Route;
@@ -30,6 +31,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 
 
+});
+
+Route::middleware(['auth', 'verified', 'can:manage'])->group(function () {
+    Route::get('/admin', Admin::class)->name('admin');
 });
 
 
