@@ -17,9 +17,9 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserSeeder::class,
             CourseSeeder::class,
-            ResourceSeeder::class,
             CourseRegistrationSeeder::class,
             LessonSeeder::class,
+            ResourceSeeder::class,
         ]);
 
         // WithoutModelEvents::enable();

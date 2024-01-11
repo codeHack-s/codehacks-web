@@ -19,6 +19,10 @@ class Lesson extends Model
         'scheduled_time',
     ];
 
+    protected $casts = [
+        'scheduled_time' => 'datetime',
+    ];
+
     public function getRouteKeyName(): string
     {
         return 'slug';

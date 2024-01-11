@@ -4,12 +4,12 @@ namespace App\Http\Livewire;
 
 use App\Models\Course;
 use App\Models\CourseRegistration as ModelsCourseRegistration;
-use Doctrine\DBAL\Schema\View;
-use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Foundation\Application;
 use Livewire\Component;
 
-class CourseRegistration extends Component
+class CourseRegistrationBtn extends Component
 {
     public Course $course;
     public bool $isRegistered = false;
@@ -49,9 +49,8 @@ class CourseRegistration extends Component
             $this->isRegistered = true;
         }
     }
-
-    public function render(): Application|Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
+    public function render(): View|Application|Factory|\Illuminate\Contracts\Foundation\Application
     {
-        return view('courses.card');
+        return view('livewire.course-registration-btn');
     }
 }

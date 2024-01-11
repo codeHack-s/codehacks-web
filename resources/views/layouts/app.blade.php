@@ -55,7 +55,7 @@
         @show
 
         <!-- Page Content -->
-        <main>
+        <main class="w-full">
             {{ $slot }}
         </main>
     </section>

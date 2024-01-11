@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ThemeController;
 use App\Http\Controllers\PageController;
+use App\Http\Livewire\Connect;
+use App\Http\Livewire\Courses;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +24,12 @@ Route::get('/', function () {
 
 Route::middleware(['auth', 'verified'])->group(function () {
    Route::get('/dashboard', [PageController::class, 'dashboard'])->name('dashboard');
+   Route::get('/courses', Courses::class)->name('courses');
+   Route::get('/courses/{course:slug}', [PageController::class, 'view_course'])->name('courses.show');
+   Route::get('/connect', Connect::class)->name('connect');
+
+
+
 });
 
 

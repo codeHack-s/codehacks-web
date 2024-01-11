@@ -16,14 +16,14 @@
             </div>
 
             <!-- Sidebar content here -->
-            <a class="side" href="{{ route('dashboard') }}" >
+            <a class="side {{ request()->routeIs('dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}">
                 <i class="fa-solid fa-home-lg"></i>
                 <div class="">
                     Dashboard
                 </div>
             </a>
 
-            <a class="side" href="" >
+            <a href="{{ route('courses') }}"  class="side {{ request()->routeIs('courses') ? 'active' : '' }}">
                 <i class="fa-solid fa-graduation-cap"></i>
                 <div class="">
                     Courses
@@ -44,14 +44,14 @@
                 </div>
             </a>
 
-            <a class="side" href="" >
+            <a href="{{route('connect')}}" class="side {{ request()->routeIs('connect') ? 'active' : '' }}">
                 <i class="fa-solid fa-circle-nodes"></i>
                 <div class="">
                     Connect
                 </div>
             </a>
 
-            <a class="side" href="{{ route('profile.edit') }}" >
+            <a href="{{ route('profile.edit') }}" class="side {{ request()->routeIs('profile.edit') ? 'active' : '' }}">
                 <i class="fa-regular fa-circle-user"></i>
                 <div class="">
                     Account
