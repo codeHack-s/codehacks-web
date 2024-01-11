@@ -81,7 +81,7 @@ class AdminResources extends Component
     private function resetInputFields(): void
     {
         $this->editingResource = new Resource();
-        $this->lesson_id = 0;
+        $this->lesson_id = 1;
         $this->name = '';
         $this->url = '';
         $this->type = '';

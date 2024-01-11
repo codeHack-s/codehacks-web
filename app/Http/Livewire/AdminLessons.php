@@ -82,7 +82,7 @@ class AdminLessons extends Component
         $this->editingLesson = new Lesson();
         $this->title = '';
         $this->content = '';
-        $this->course_id = 0;
+        $this->course_id = 1;
         $this->scheduled_time = '';
     }
 
