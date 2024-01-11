@@ -14,7 +14,7 @@ class Lesson extends Model
     protected $fillable = [
         'title',
         'slug',
-        'description',
+        'content',
         'course_id',
         'scheduled_time',
     ];
@@ -31,6 +31,11 @@ class Lesson extends Model
     public function course(): BelongsTo
     {
         return $this->belongsTo(Course::class);
+    }
+
+    public function isPast(): bool
+    {
+        return $this->scheduled_time->isPast();
     }
 
     public function resources(): HasMany

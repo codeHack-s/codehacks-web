@@ -60,6 +60,11 @@
                 <!-- Lessons -->
 
             </div>
+
+            <div class="mt-10 mb-3 text-2xl font-semibold">
+                Lessons
+            </div>
+
             <div class="overflow-x-auto">
                 <table class="table">
                     <!-- head -->
@@ -67,17 +72,17 @@
                     <tr>
                         <th></th>
                         <th>Title</th>
-                        <th>Description</th>
+                        <th class="hidden sm:block">Description</th>
                         <th>Date</th>
                     </tr>
                     </thead>
                     <tbody>
 
                     @foreach($course->lessons as $lesson)
-                        <tr>
+                        <tr class="{{$lesson->isPast() ? 'bg-gray-100' : ''}}">
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $lesson->title }}</td>
-                            <td>{{ $lesson->description }}</td>
+                            <td class="hidden sm:block">{{ $lesson->content }}</td>
                             <td>{{ $lesson->scheduled_time->format('l F jS Y') }}</td>
                         </tr>
                     @endforeach
