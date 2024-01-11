@@ -54,7 +54,7 @@
                 <label for="course_id">Course</label>
                 <select id="course_id" wire:model="course_id" class="input input-info text-xs text-gray-100">
                     @foreach($courses as $course)
-                        <option value="{{ $course->id }}">{{ $course->title }}</option>
+                        <option value="{{ $course->id }}">{{ $course->title }} {{ $course->id }}</option>
                     @endforeach
                 </select>
 

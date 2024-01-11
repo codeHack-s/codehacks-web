@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Course;
 use App\Models\Lesson;
 use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Collection;
@@ -23,7 +24,7 @@ class AdminLessons extends Component
     public function mount(): void
     {
         $this->lessons = Lesson::all();
-        $this->courses = Lesson::all();
+        $this->courses = Course::all();
     }
 
     public function editLesson($lessonId): void
