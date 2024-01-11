@@ -9,7 +9,7 @@
                     </h1>
                 </center>
 
-                <div class="w-full hover:scale-95 transition overflow-hidden sm:max-w-xs bg-white border border-gray-200 rounded-lg shadow">
+                <div class="course-card relative">
                     <a href="#">
                         <img class="rounded-t-lg w-full object-cover" src="{{asset('storage/1693925608.jpg')}}"
                              alt="product image"/>
@@ -17,30 +17,38 @@
                     <div class="px-2 sm:px-3 md:px-4 pb-5">
 
                         <a href="#">
-                            <h5 class="text-xl font-semibold tracking-tight text-gray-800">
+                            <h5 class="text-xl font-semibold tracking-tight">
                                 The last CodeHack
                             </h5>
                         </a>
 
-                        <div class="flex items-center mt-2.5 mb-5">
+                        <div class="flex absolute text-orange-50 top-0 z-50 items-center mt-2.5 mb-5">
                             <div data-tip="not supported"
-                                 class="flex tooltip items-center space-x-1 rtl:space-x-reverse">
-                                <i class='fa-solid fa-star text-yellow-300'></i>
-                                <i class='fa-solid fa-star text-yellow-300'></i>
-                                <i class='fa-solid fa-star text-yellow-300'></i>
-                                <i class='fa-solid fa-star text-yellow-300'></i>
-                                <i class='fa-solid fa-star text-yellow-300'></i>
+                                 class="flex text-[8px] tooltip items-center space-x-1 rtl:space-x-reverse">
+                                <i class='fa-solid fa-star'></i>
+                                <i class='fa-solid fa-star'></i>
+                                <i class='fa-solid fa-star'></i>
+                                <i class='fa-solid fa-star'></i>
+                                <i class='fa-solid fa-star'></i>
                             </div>
                             <span
                                 class="bg-blue-100 hidden text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3">5.0</span>
                         </div>
+
                         <div class="flex items-center justify-between">
-                            <span class="text-xl font-semibold text-gray-600">
+                            <span class="text-sm font-semibold">
                                 8 Lessons
                             </span>
-                            <a href="#" class="">
-                                <i class="fa-regular fa-bookmark"></i>
-                            </a>
+                            <span class="text-sm font-semibold space-x-2 text-gray-400">
+                                <a href="#" class="">
+                                    <i class="fa-regular fa-bookmark"></i>
+                                </a>
+                            @can('manage')
+                                    <a href="">
+                                    <i class="fa-solid fa-gear"></i>
+                                </a>
+                                @endcan
+                            </span>
                         </div>
                     </div>
 

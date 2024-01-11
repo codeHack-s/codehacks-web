@@ -22,3 +22,7 @@
 .side {
     @apply duration-200 flex gap-2 items-center hover:bg-blue-700 hover:text-gray-50 p-2 rounded w-full bg-base-200;
 }
+
+.course-card{
+    @apply w-full hover:scale-95 transition overflow-hidden sm:max-w-[250px] border border-gray-200 rounded-lg shadow;
+}

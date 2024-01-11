@@ -60,7 +60,7 @@
 
             <!--Light Mode-->
 
-            <div class="side">
+            <div id="theme-button" class="side">
                 <!-- Dark Mode Switch -->
                 <label class="swap swap-rotate">
                     <!-- this hidden checkbox controls the state -->
@@ -79,7 +79,7 @@
                     </svg>
                 </label>
 
-                <span id="theme-button">
+                <span>
                     Change Mode
                 </span>
 
@@ -170,6 +170,10 @@
 
                     themeButton.addEventListener('click', () => {
                         const html = document.querySelector('html');
+                        //click the button to toggle the theme
+                        const swap = document.querySelector('.swap');
+                        swap.classList.toggle('swap-rotate');
+
                         const currentTheme = html.getAttribute('data-theme');
 
                         if (currentTheme === 'dark') {
