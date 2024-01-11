@@ -2,12 +2,19 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Lesson;
+use Illuminate\Contracts\View\View;
 use Livewire\Component;
 
 class AdminLessons extends Component
 {
-    public function render()
+    public $lessons;
+    public function mount(): void
     {
-        return view('livewire.admin-lessons');
+        $this->lessons = Lesson::all();
+    }
+    public function render(): View
+    {
+        return view('admin.lessons');
     }
 }

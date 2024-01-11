@@ -2,12 +2,19 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Resource;
+use Illuminate\Contracts\View\View;
 use Livewire\Component;
 
 class AdminResources extends Component
 {
-    public function render()
+    public $resources;
+    public function mount(): void
     {
-        return view('livewire.admin-resources');
+        $this->resources = Resource::all();
+    }
+    public function render(): View
+    {
+        return view('admin.resources');
     }
 }
