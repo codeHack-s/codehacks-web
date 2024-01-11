@@ -6,51 +6,52 @@
     <div class="z-40 drawer-side">
         <label for="my-drawer" class="drawer-overlay"></label>
 
-        <div class="menu overflow-clip p-4 pt-[70px] w-64 h-full bg-base-100 border-r border-gray-500 text-base-content gap-4 flex flex-col justify-start items-start">
+        <div class="menu overflow-clip p-4 pt-[70px] w-64 h-full bg-base-100 border-r border-gray-500 text-base-content gap-3 flex flex-col justify-start items-start">
             <!-- App Logo -->
+
             <div class="flex items-center w-full justify-center gap-4">
                 <a href="{{ route('dashboard') }}">
-                    <x-application-logo class="block w-[100px] fill-current text-gray-800" />
+                    <x-application-logo class="block p-2 w-[100px] fill-current text-gray-800" />
                 </a>
             </div>
 
             <!-- Sidebar content here -->
-            <a class="side" href="{{ route('dashboard') }}" >
+            <a class="side {{ request()->routeIs('dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}">
                 <i class="fa-solid fa-home-lg"></i>
                 <div class="">
                     Dashboard
                 </div>
             </a>
 
-            <a class="side" href="{{ route('courses.index') }}" >
+            <a href="{{ route('courses') }}"  class="side {{ request()->routeIs('courses') ? 'active' : '' }}">
                 <i class="fa-solid fa-graduation-cap"></i>
                 <div class="">
                     Courses
                 </div>
             </a>
 
-            <a class="side" href="{{ route('lessons.index') }}" >
+            <a class="side" href="" >
                 <i class="fa-regular fa-circle-play"></i>
                 <div class="">
-                    Lessons
+                    Videos
                 </div>
             </a>
 
-            <a class="side" href="{{ route('events.index') }}" >
+            <a class="side" href="" >
                 <i class="fa-regular fa-calendar"></i>
                 <div class="">
                     Events
                 </div>
             </a>
 
-            <a class="side" href="{{ route('connect.index') }}" >
+            <a href="{{route('connect')}}" class="side {{ request()->routeIs('connect') ? 'active' : '' }}">
                 <i class="fa-solid fa-circle-nodes"></i>
                 <div class="">
                     Connect
                 </div>
             </a>
 
-            <a class="side" href="{{ route('profile.edit') }}" >
+            <a href="{{ route('profile.edit') }}" class="side {{ request()->routeIs('profile.edit') ? 'active' : '' }}">
                 <i class="fa-regular fa-circle-user"></i>
                 <div class="">
                     Account
@@ -59,7 +60,7 @@
 
             <!--Light Mode-->
 
-            <div class="side">
+            <div id="theme-button" class="side">
                 <!-- Dark Mode Switch -->
                 <label class="swap swap-rotate">
                     <!-- this hidden checkbox controls the state -->
@@ -78,7 +79,7 @@
                     </svg>
                 </label>
 
-                <span id="theme-button">
+                <span>
                     Change Mode
                 </span>
 
@@ -169,6 +170,10 @@
 
                     themeButton.addEventListener('click', () => {
                         const html = document.querySelector('html');
+                        //click the button to toggle the theme
+                        const swap = document.querySelector('.swap');
+                        swap.classList.toggle('swap-rotate');
+
                         const currentTheme = html.getAttribute('data-theme');
 
                         if (currentTheme === 'dark') {

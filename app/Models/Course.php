@@ -4,58 +4,59 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Course extends Model
 {
     use HasFactory;
 
-     protected $fillable = [
-        'user_id',
+    protected $fillable = [
         'title',
+        'slug',
         'description',
-        'online',
-        'created_by',
-        'updated_by',
-        'image_url',
-        'price',
-        'status',
-        'for',
     ];
 
-    public function user(): BelongsTo
+    public function getRouteKeyName(): string
     {
-        return $this->belongsTo(User::class);
+        return 'slug';
     }
 
     public function lessons(): HasMany
     {
         return $this->hasMany(Lesson::class);
     }
-
-    // Relationship to Users (both students and tutors)
-    public function users(): BelongsToMany
+    public function getLessonsNumberAttribute(): int
     {
-        return $this->belongsToMany(User::class)->withPivot('role');
+        return $this->lessons()->count();
     }
 
-    // Relationship to Payments
-    public function payments(): HasMany
+    //start of course date is the earliest lesson date
+    //lessons have a scheduled_time column which is a datetime 2024-12-23 15:14:59
+    public function getStartDateAttribute(): string
     {
-        return $this->hasMany(Payment::class);
+        $lessons = $this->lessons()->orderBy('scheduled_time', 'asc')->first();
+        $startDate = $lessons->scheduled_time->format('Y-m-d');
+        if ($startDate) {
+            return $startDate;
+        }
+        return now()->format('Y-m-d');
     }
 
-    public function interviews(): HasMany
+    //end of course date is the latest lesson date
+    public function getEndDateAttribute(): string
     {
-        return $this->hasMany(Interview::class);
+        $lessons = $this->lessons()->orderBy('scheduled_time', 'desc')->first();
+        $endDate = $lessons->scheduled_time->format('Y-m-d');
+        if ($endDate) {
+            return $endDate;
+        }
+        return now()->format('Y-m-d');
     }
 
-    public function enrolledUsers(): BelongsToMany
+    public function getLessonDatesAttribute()
     {
-        return $this->belongsToMany(User::class, 'enrollments')->withTimestamps();
+        return $this->lessons->pluck('scheduled_time')->map(function ($datetime) {
+            return $datetime->format('Y-m-d');
+        });
     }
-
-
 }

@@ -1,48 +1,82 @@
-<x-app-layout>
+<div>
+    <div class="py-12">
+        <div class="max-w-7xl mx-aut px-2 sm:px-3 lg:px-4">
+            <div class="sm:rounded-lg relative">
+                <div class="render mt-10 mb-1">
+                    <!-- Courses Table -->
+                    <h2 class="text-center text-xl font-semibold">Courses</h2>
 
-    <section class="flex w-full">
-        <div class="w-full sm:px-6 lg:px-8">
+                    <div class="flex justify-end">
+                        <button class="btn btn-sm btn-circle ring-1 ring-inset ring-offset-1"
+                                wire:click="createNewCourse">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
 
-            <div class="p-3 sm:p-5 ">
-
-                <!-- Table $users -->
-                <table class="table table-zebra">
-                    <thead class="bg-purple-400 text-gray-50">
-                    <tr>
-                        <th class="px-6 py-3 text-left text-xs leading-4 font-medium uppercase tracking-wider">
-                            First Name
-                        </th>
-                        <th class="px-6 py-3 text-left text-xs leading-4 font-medium uppercase tracking-wider">
-                            Last Name
-                        </th>
-                        <th class="px-6 py-3 text-left text-xs leading-4 font-medium uppercase tracking-wider">
-                            Email
-                        </th>
-                        <!-- Add more columns headers as needed -->
-                    </tr>
-                    </thead>
-                    <tbody class="divide-y divide-gray-200">
-                    @foreach ($users as $user)
+                    <table class="table mb-5 table-zebra ring-1 text-xs rounded-md overflow-hidden mt-3">
+                        <thead>
                         <tr>
-                            <td class="px-6 py-4 whitespace-no-wrap">
-                                {{ $user->first_name }}
-                            </td>
-                            <td class="px-6 py-4 whitespace-no-wrap">
-                                {{ $user->last_name }}
-                            </td>
-                            <td class="px-6 py-4 whitespace-no-wrap">
-                                {{ $user->email }}
-                            </td>
-                            <!-- Add more columns data as needed -->
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Actions</th>
                         </tr>
-                    @endforeach
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                        @foreach($courses as $course)
+                            <tr>
+                                <td>{{ $course->title }}</td>
+                                <td>{{ $course->description }}</td>
+                                <td class="flex gap-2" colspan="4">
+                                    <button wire:click="editCourse({{ $course->id }})"
+                                            class="btn btn-sm btn-circle ring-1 ring-inset ring-offset-1">
+                                        <i class="fa-solid fa-gear"></i>
+                                    </button>
+                                    <button wire:click="deleteCourse({{ $course->id }})"
+                                        class="btn btn-sm btn-circle ring-1 ring-inset ring-offset-1 ring-error btn-error">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
 
+                    @livewire('admin-lessons')
+
+                    @livewire('admin-resources')
+                </div>
+
+                <!--Modal-->
+                <dialog id="course_modal" class="modal bg-gray-100 bg-opacity-60 z-50" {{$showModal ? 'open' : ''}}>
+                    <div class="modal-box">
+                        <h3 class="font-bold  text-lg">Edit</h3>
+                        <form class="flex flex-col" wire:submit.prevent="saveCourse">
+                            <div class="py-4 text-gray-100 flex flex-col">
+                                <label class=" " for="title">Title</label>
+                                <input class="input text-xs input-info text-gray-100" type="text" id="title"
+                                              wire:model="title">
+                                <label class=" " for="slug">Slug</label>
+                                <input id="slug" class="input input-info text-xs text-gray-100" type="text" wire:model="slug" placeholder="Slug">
+                                <label class=" " for="description">Description</label>
+                                <textarea class="textarea textarea-info text-xs text-gray-100" id="description"
+                                          wire:model="description"></textarea>
+                            </div>
+                            <div class="modal-action py-4 gap-2 flex w-full">
+                                <button type="submit"
+                                        class="btn w-1/2 btn-sm ring-1 ring-inset ring-offset-1 ring-offset-gray-100">
+                                    Save
+                                    <i class="fa-solid fa-check"></i>
+                                </button>
+                                <button type="button" class="btn w-1/2 btn-sm ring-1 ring-inset ring-offset-1 ring-offset-error" onclick="let course_modal = document.getElementById('course_modal');
+                                course_modal.close()">
+                                    Cancel
+                                    <i class="fa-solid fa-xmark"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </dialog>
             </div>
-
         </div>
-    </section>
-
-</x-app-layout>
-
+    </div>
+</div>

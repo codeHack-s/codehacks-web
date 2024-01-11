@@ -19,6 +19,7 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
+        "@tailwindcss/aspect-ratio": "^0.4.2",
         "concurrently": "^8.2.2"
     }
 }

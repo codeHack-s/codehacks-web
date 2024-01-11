@@ -21,4 +21,5 @@ class ThemeController extends Controller
 
         return response()->json(['theme' => $theme]);
     }
+
 }

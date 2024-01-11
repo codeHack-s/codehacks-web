@@ -27,42 +27,29 @@
             </div>
 
             <!-- Settings Dropdown -->
-            <div class="hidden sm:flex sm:items-center sm:ml-6">
-                <button class="btn btn-ghost btn-circle">
+            <div class="hidden sm:flex gap-2 sm:items-center sm:ml-6">
+                <button class="btn btn-ghost btn-sm btn-circle">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
-                <button class="btn btn-ghost btn-circle">
-                    <div class="indicator">
+                <button class="btn btn-ghost btn-sm btn-circle">
+                    <span class="indicator">
                         <i class="fa-regular fa-bell"></i>
                         <span class="badge badge-xs badge-primary indicator-item"></span>
-                    </div>
+                    </span>
                 </button>
 
-                <!-- Profile Button -->
-
-                <a href="{{ route('profile.edit') }}" class="btn btn-ghost btn-circle">
+                <a href="{{ route('profile.edit') }}" class="btn btn-sm btn-ghost btn-circle">
                     <i class="fa-regular fa-circle-user"></i>
                 </a>
-
-                <!-- Logout Button -->
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-
-                    <button class="btn btn-ghost btn-circle" :href="route('logout')"
-                            onclick="event.preventDefault();
-                                        this.closest('form').submit();">
-                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                    </button>
-                </form>
 
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
-                            <div>{{ Auth::user()->name }}</div>
+                            <span>{{ Auth::user()->name }}</span>
 
-                            <div class="ml-1">
+                            <span class="ml-1">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
-                            </div>
+                            </span>
                         </button>
                     </x-slot>
 
@@ -76,7 +63,7 @@
                             @csrf
 
                             <x-dropdown-link :href="route('logout')"
-                                    onclick="event.preventDefault();
+                                             onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                                 {{ __('Log Out') }}
                             </x-dropdown-link>
@@ -122,7 +109,7 @@
                     @csrf
 
                     <x-responsive-nav-link :href="route('logout')"
-                            onclick="event.preventDefault();
+                                           onclick="event.preventDefault();
                                         this.closest('form').submit();">
                         {{ __('Log Out') }}
                     </x-responsive-nav-link>

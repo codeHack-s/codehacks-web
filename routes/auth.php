@@ -12,23 +12,10 @@ use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
-
-    Route::get('select-account-type', function() {
-        return view('select-account-type');
-    })->name('select-account-type');
-
-    // Route without the type parameter
     Route::get('register', [RegisteredUserController::class, 'create'])
-        ->name('register-default');
+                ->name('register');
 
-    // Route with the type parameter
-    Route::get('register/{type}', [RegisteredUserController::class, 'create'])
-        ->name('register');
-
-    Route::post('register/store', [RegisteredUserController::class, 'store'])->name('campus');
-
-    Route::post('register/store/innovate', [RegisteredUserController::class, 'store_innovate'])->name('register.store-innovate');
-
+    Route::post('register', [RegisteredUserController::class, 'store']);
 
     Route::get('login', [AuthenticatedSessionController::class, 'create'])
                 ->name('login');

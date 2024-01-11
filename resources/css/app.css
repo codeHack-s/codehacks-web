@@ -2,84 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-.custom-shape-divider-bottom-1689080022 {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    transform: rotate(180deg);
-}
-
-.custom-shape-divider-bottom-1689080022 svg {
-    position: relative;
-    display: block;
-    width: calc(147% + 1.3px);
-    height: 139px;
-    transform: rotateY(180deg);
-}
-
-.custom-shape-divider-bottom-1689080022 .shape-fill {
-    fill: rgba(242, 235, 235, 0.42);
-}
-
-/** For mobile devices **/
-@media (max-width: 767px) {
-    .custom-shape-divider-bottom-1689080022 svg {
-        width: calc(147% + 1.3px);
-        height: 41px;
-    }
-}
-
-.cash-bg{
-    background-image: url('codehacks.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-.img-box {
-    overflow-x: auto;
-    white-space: nowrap;
-    width: 100%;
-    display: flex;
-}
-
-.img-list i, .img-list-slow i {
-    font-size: 100px; /* Adjust as needed */
-    margin-right: 10px;
-}
-
-.menu{
-    z-index: auto;
-}
-
-/* width */
+/*Custom scrollbar*/
 ::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
+  width: 10px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    height: 5px;
+  background: #f1f1f1;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #5f676a;
-    border-radius: 5px;
-    height: 5px;
+  background: #888;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #555;
-    height: 5px;
+  background: #f7770f;
 }
 
 .side {
-    @apply duration-200 flex gap-2 items-center hover:bg-blue-700 hover:text-gray-50 p-2 rounded w-full bg-base-200;
+    @apply flex gap-2 items-center hover:bg-blue-700 hover:text-gray-50 p-2 rounded w-full bg-base-200 hover:shadow hover:scale-105 transition duration-300;
+}
+
+.side.active {
+    @apply bg-blue-700 text-gray-50;
+}
+
+.course-card{
+    @apply w-full hover:scale-105 transition duration-300 overflow-hidden sm:max-w-[250px] border border-gray-200 rounded-lg shadow;
 }

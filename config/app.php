@@ -70,7 +70,6 @@ return [
     |
     */
 
-    //Kenya Timezone
     'timezone' => 'Africa/Nairobi',
 
     /*
@@ -142,7 +141,7 @@ return [
 
     'maintenance' => [
         'driver' => 'file',
-        // 'store'  => 'redis',
+        // 'store' => 'redis',
     ],
 
     /*

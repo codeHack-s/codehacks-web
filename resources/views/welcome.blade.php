@@ -4,45 +4,44 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Tailwind CSS -->
-    <title>codeHacks™️</title>
+    <title>CodeHacks™️</title>
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
     <meta property="og:title" content="codeHacks™️">
-    <meta property="og:description" content="
-    CodeHacks is a community of developers and tech enthusiasts learning to code, improving their skills, and building software projects.
-    ">
-    <meta property="og:image" content="{{asset('images/logo.png')}}">
+    <meta property="og:description" content="Codehacks is a KenTom company that offers a wide range of software services online including courses">
+    <meta property="og:image" content="{{asset('storage/code.png')}}">
     <meta property="og:url" content="https://codehacks.co.ke/">
 
-    <meta name="twitter:card" content="{{asset('images/logo.png')}}">
+    <meta name="twitter:card" content="{{asset('storage/code.png')}}">
     <meta name="twitter:site" content="@code_hacks254">
     <meta name="twitter:title" content="codeHacks™️">
-    <meta name="twitter:description" content="
-    CodeHacks is a community of developers and tech enthusiasts learning to code, improving their skills, and building software projects."/>
-    <meta name="twitter:image" content="{{asset('logo.png')}}">
+    <meta name="twitter:description" content="Codehacks is a KenTom company that offers a wide range of software services online including courses"/>
+    <meta name="twitter:image" content="{{asset('storage/code.png')}}">
 
-    <link rel="icon" href="{{ asset('storage/images/fav.png') }}" type="image/png" sizes="16x16">
-    <meta aria-description="
-    CodeHacks is a community of developers and tech enthusiasts learning to code, improving their skills, and building software projects.
+    <link rel="icon" href="{{ asset('storage/code.png') }}" type="image/png" sizes="16x16">
+    <meta aria-description="Codehacks is a KenTom company that offers a wide range of software services online including courses
     ">
 
     <!--details for search engines-->
-    <meta name="description" content="CodeHacks is a community of developers and tech enthusiasts learning to code, improving their skills, and building software projects.">
+    <meta name="description"
+          content="CodeHacks is a community of developers and tech enthusiasts learning to code, improving their skills, and building software projects.">
 
-    <meta name="keywords" content="codeHacks, codehacks kenya, coding, learn coding, learn to code, programming, web development, web design, software development, Laravel, freelance, freelancing, tech community, coding community, programming community, Kenya, technology, JavaScript, Java, PHP, C++, C#, Python, Adobe, VS Code, UI, backend, SSH, VPS, Linux servers, Apache, Windows installation, codehacks.co.ke" />
+    <meta name="keywords"
+          content="codeHacks, codehacks kenya, coding, learn coding, learn to code, programming, web development, web design, software development, Laravel, freelance, freelancing, tech community, coding community, programming community, Kenya, technology, JavaScript, Java, PHP, C++, C#, Python, Adobe, VS Code, UI, backend, SSH, VPS, Linux servers, Apache, Windows installation, codehacks.co.ke"/>
 
     <script src="https://kit.fontawesome.com/af6aba113a.js" crossorigin="anonymous"></script>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet"/>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <style>
         .swiper-slide {
             height: 80.7vh; /* 2/3 of viewport height */
         }
+
         .swiper-slide img {
             height: 100%;
             width: 100%;
@@ -50,7 +49,7 @@
         }
 
         .swiper-slide {
-            background: url('{{ asset('codehacks.svg') }}');
+            background: url('{{ asset('storage/codehacks.svg') }}');
             background-size: cover;
             background-position: center;
         }
@@ -67,12 +66,12 @@
             </a>
         </div>
         <a href="https://www.chuka.ac.ke/">
-            <img src="{{ asset('images/chuka.png') }}" alt="Chuka University" class="w-8 h-8">
+            <img src="{{ asset('storage/chuka.png') }}" alt="Chuka University" class="w-8 h-8">
         </a>
     </div>
     <div class="navbar-center">
-        <a href="{{ route('dashboard') }}" >
-            <img src="codew.png" alt="Codehacks" class="w-28 sm:w-32 mix-blend-screen">
+        <a href="{{ route('dashboard') }}">
+            <img src="{{asset("storage/codehacks.png")}}" alt="Codehacks" class="w-28 sm:w-32 mix-blend-screen">
         </a>
     </div>
 
@@ -82,36 +81,74 @@
             <i class="fa-brands fa-2x fa-github"></i>
         </a>
 
-        <button class="btn fa-2x btn-ghost btn-circle">
+        <a href="https://chat.whatsapp.com/F9h3tU2kTISAIDIh6UWYtE" target="_blank" class="btn fa-2x btn-ghost btn-circle">
             <i class="fa-brands fa-2x fa-whatsapp"></i>
-        </button>
+        </a>
 
     </div>
 </div>
 <section class=overflow-x-hidden">
 
     <div class="swiper-slide w-full">
-        {{--<img height="screen" src="/images/dark2.jpg" class="w-full min-h-64 object-cover" alt="image description">--}}
         <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
-            <h1 class="text-1xl sm:text-2xl font-semibold text-white">Welcome to CodeHacks™️</h1>
-            <p class="text-white mt-2">WaitList V 0.0.1</p>
+            <h1 class="text-1xl sm:text-2xl font-semibold text-white">Welcome to the last CodeHack️</h1>
+            <p class="text-xs text-gray-500 mt-2">
+                CodeHacks is a <a class="text-blue-600 text-sm" target="_blank" href="https://tomsteve.me">
+                    kenTom™️
+                </a>
+                company
+            </p>
             <div class="space-x-4 flex items-center justify-center mt-4">
-                <!-- Register and login buttons with icons -->
-                <a href="{{ route('register-default') }}" class="">
-                    <button class="btn normal-case w-[120px] btn-warning backdrop-blur-md ring-offset-2 rounded-full btn-outline ring-2">
+                <a href="{{ route('register') }}" class="">
+                    <button
+                        class="btn normal-case w-[120px] btn-warning backdrop-blur-md ring-offset-2 rounded-full btn-outline ring-2">
                         <i class="fas fa-user-plus mr-1"></i>
                         Register
                     </button>
                 </a>
-                <a href="{{ route('login') }}" class="btn w-[120px] normal-case backdrop-blur-md btn-success rounded-full btn-outline ring-2 ring-offset-2 text-base-100">
+                <a href="{{ route('login') }}"
+                   class="btn w-[120px] normal-case backdrop-blur-md btn-success rounded-full btn-outline ring-2 ring-offset-2 text-base-100">
                     <i class="fas fa-sign-in-alt mr-1"></i>
                     Login
                 </a>
             </div>
         </div>
+        <div
+            class="absolute flex bottom-10 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full flex-col items-center justify-center text-center">
+            <h1>
+                <span class="text-2xl sm:text-3xl font-semibold text-white">Our Partners</span>
+            </h1>
+            <div class="logos flex gap-4 w-full items-center justify-center text-center">
+
+                <div data-tip="Chuka University" class="tooltip w-12">
+                    <img src="{{asset("storage/chuka.png")}}" alt="Chuka" class="w-28 sm:w-32 mix-blend-screen">
+                </div>
+
+                <div data-tip="CodeHacks" class="w-12 tooltip">
+                    <img src="{{asset("storage/code.png")}}" alt="Codehacks"
+                         class=" mix-blend-screen w-full object-cover">
+                </div>
+
+                <div data-tip="FutureSpace" class="w-24 tooltip">
+                    <img src="{{asset("storage/fs.png")}}" alt="Codehacks"
+                         class=" mix-blend-screen w-full object-cover">
+                </div>
+
+                <div data-tip="KenTom" class="tooltip w-12">
+                    <img src="{{asset("https://tomsteve.me/fav.png")}}" alt="Codehacks"
+                         class=" mix-blend-screen w-full object-cover">
+                </div>
+
+                <div data-tip="KenTom" class="tooltip w-24">
+                    <img src="{{asset("https://tomsteve.me/img/clients/client-6.png")}}" alt="kenTom"
+                         class=" mix-blend-screen w-full object-cover">
+                </div>            </div>
+
+        </div>
     </div>
     <div class="p-2 sm:p-6">
-        <section class="info mt-2 text-gray-800 sm:my-4 py-8 bg-white shadow-sm flex flex-col gap-2 sm:gap-5 rounded-lg">
+        <section
+            class="info mt-2 text-gray-800 sm:my-4 py-8 bg-white shadow-sm flex flex-col gap-2 sm:gap-5 rounded-lg">
 
             <div class="sm:px-6 flex flex-col gap-2 justify-center items-center px-2">
                 <div>
@@ -119,53 +156,68 @@
                 </div>
                 <div>
                     <h2 class="text-2xl font-bold mb-6 text-gray-600">
-                        Welcome to CodeHacks™️
+                        The Last CodeHack
                     </h2>
                     <p class="text-lg leading-6">
-                        At CodeHacks, we're creating a vibrant community of tech enthusiasts, budding developers, and seasoned professionals. Here, you can dive into the world of coding, enhance your existing skills, and work collaboratively on innovative software projects.
+                        This is the last open source project from kenTom companies,
+                        we are now moving to a new level of development and we are going to be a closed source company.
+                        This project is going to equip you with the skills you need to be a great developer, a great
+                        team player and make you ready for the job market as you make money from your skills.
                     </p>
                 </div>
             </div>
 
-            <!-- Chuka University logo -->
             <div class="flex justify-center my-6">
-                <img src="{{ asset('images/chuka.png') }}" alt="Chuka University" class="w-24 h-24">
+                <img src="{{ asset('storage/chuka.png') }}" alt="Chuka University Logo" class="w-24 h-24">
             </div>
 
-                <div class="sm:px-6 flex flex-col gap-2 justify-center items-center px-2">
+            <div class="sm:px-6 flex flex-col gap-2 justify-center items-center px-2">
                 <div>
-                        <i class="fa-regular fa-4x fa-handshake"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-2xl mb-4 text-gray-600">In Partnership with Chuka University</h3>
-                        <p class="text-lg leading-6 mb-6">Our strategic partnership with Chuka University enables us to provide top-notch, industry-standard tech education. We combine our tech-savvy approach with Chuka University's academic excellence to bring you the best learning experience in the tech world.</p>
-                    </div>
+                    <i class="fa-regular fa-4x fa-handshake"></i>
                 </div>
+                <div>
+                    <h3 class="font-bold text-2xl mb-4 text-gray-600">In Partnership with Chuka University</h3>
+                    <p class="text-lg leading-6 mb-6">Our strategic partnership with Chuka University enables us to
+                        provide top-notch, industry-standard tech education. We combine our tech-savvy approach with
+                        Chuka University's academic excellence to bring you the best learning experience in the tech
+                        world.</p>
+                </div>
+            </div>
 
-                <div class="sm:px-6 flex flex-col gap-2 justify-center items-center px-2">
-                    <div>
-                        <i class="fa-solid fa-4x fa-rocket"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-2xl my-4 text-gray-600">
-                            We're Building Something Awesome</h3>
-                        <p class="text-lg leading-6 mb-6">We're currently hard at work constructing our website to give you a seamless learning and community experience. It's going to be worth the wait!. We are also launching CODEHACKS Campus and CodeHacks Innovate.
-                        </p>
-                    </div>
+            <div class="sm:px-6 flex flex-col gap-2 justify-center items-center px-2">
+                <div>
+                    <i class="fa-solid fa-4x fa-database"></i>
                 </div>
+                <div>
+                    <h3 class="font-bold text-2xl my-4 text-gray-600">
+                        Concerning all previous data
+                    </h3>
+                    <p class="text-lg leading-6 mb-6">We're currently experiencing some technical issues with our
+                        database. We're working on it and we'll be back up and running soon. We apologize for any
+                        inconvenience caused.
+                        <br>
+                        <br>
+                        <strong>Update:</strong>All the data will be discarded due to security reasons.
+                        This is because we are moving to a new level of development and we are going to be a closed
+                        source company.
+                    </p>
+                </div>
+            </div>
 
-                <div class="sm:px-6 flex flex-col gap-2 justify-center items-center px-2">
-                    <div>
-                        <i class="fa-solid fa-4x fa-shield-halved"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-2xl mb-4 text-gray-600">We're Now Live</h3>
-                        <p class="text-lg leading-6 mb-6">
-                            We're now live! You can now register a new account or login to your account. We'll be rolling out new features and updates regularly, so stay tuned!
-                            For those members who registered before the launch, you can now log in to your account and access the platform.
-                        </p>
-                    </div>
+            <div class="sm:px-6 flex flex-col gap-2 justify-center items-center px-2">
+                <div>
+                    <i class="fa-solid fa-4x fa-shield-halved"></i>
                 </div>
+                <div>
+                    <h3 class="font-bold text-2xl mb-4 text-gray-600">
+                        Concerning security
+                    </h3>
+                    <p class="text-lg leading-6 mb-6">
+                        We do not store any passwords in our database or share any of your information with third
+                        parties. All your data is encrypted and stored securely in our database.
+                    </p>
+                </div>
+            </div>
 
         </section>
 
