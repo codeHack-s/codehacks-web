@@ -49,4 +49,6 @@ Route::get('/about', function () {return view('about');})->name('about');
 Route::post('/set-theme', [ThemeController::class, 'setTheme'])->name('set-theme');
 Route::get('/get-theme', [ThemeController::class, 'getTheme'])->name('get-theme');
 
+Route::get('/users', [ProfileController::class, 'users'])->name('users.index')->middleware('can:manage');
+
 require __DIR__.'/auth.php';
