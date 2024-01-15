@@ -1,5 +1,5 @@
 <x-app-layout>
-    <table class="table">
+    <table class="table mt-8">
         <thead>
             <tr>
                 <th>Name</th>
