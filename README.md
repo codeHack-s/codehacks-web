@@ -18,7 +18,7 @@ You will need the following tools:
 
 - Composer
 - Laravel
-- Node.js and npm
+- Node.js and npm 20 version
 ## Setup
 - Clone the repository
 ### Navigate into the cloned repository
